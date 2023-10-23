@@ -8,8 +8,8 @@ provider "flux" {
     #   args        = ["k8s", "create-token"],
     #   command     = "yc"
     # }
-    token = "t1.9euelZqdk5idlpzPkZXKl8aKlZKWke3rnpWaiYuOioubjYnNlpOcm8fLyZTl8_deICZW-e9NVSYI_d3z9x5PI1b5701VJgj9zef1656VmsrNkZvKjpWPnZiOyc_JypjM7_zF656VmsrNkZvKjpWPnZiOyc_JypjM.qQfFJh0qFuSLXOftWEvwtG_k2-k5tn-ABDf-UFBj-K07lY07cSS3cACFcs14NeVWCIe_t6Cp8T47axjGZNdvBg"
-  } #iam
+    token = var.github_token #"t1.9euelZqdk5idlpzPkZXKl8aKlZKWke3rnpWaiYuOioubjYnNlpOcm8fLyZTl8_deICZW-e9NVSYI_d3z9x5PI1b5701VJgj9zef1656VmsrNkZvKjpWPnZiOyc_JypjM7_zF656VmsrNkZvKjpWPnZiOyc_JypjM.qQfFJh0qFuSLXOftWEvwtG_k2-k5tn-ABDf-UFBj-K07lY07cSS3cACFcs14NeVWCIe_t6Cp8T47axjGZNdvBg"
+  }                          #iam
   git = {
     url = "ssh://git@github.com/matyushkim/test_yc_argo.git"
     ssh = {
