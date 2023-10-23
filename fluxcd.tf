@@ -3,12 +3,12 @@ provider "flux" {
     host                  = module.kube.external_v4_endpoint
     client_ca_certificate = module.kube.cluster_ca_certificate
     # cluster_ca_certificate = yandex_kubernetes_cluster.zonal_k8s_cluster.master[0].cluster_ca_certificate
-    exec = {
-      api_version = "client.authentication.k8s.io/v1beta1",
-      args        = ["k8s", "create-token"],
-      command     = "yc"
-    }
-    #  token = data.aws_eks_cluster_auth.cluster.token 
+    # exec = {
+    #   api_version = "client.authentication.k8s.io/v1beta1",
+    #   args        = ["k8s", "create-token"],
+    #   command     = "yc"
+    # }
+    token = "t1.9euelZqdk5idlpzPkZXKl8aKlZKWke3rnpWaiYuOioubjYnNlpOcm8fLyZTl8_deICZW-e9NVSYI_d3z9x5PI1b5701VJgj9zef1656VmsrNkZvKjpWPnZiOyc_JypjM7_zF656VmsrNkZvKjpWPnZiOyc_JypjM.qQfFJh0qFuSLXOftWEvwtG_k2-k5tn-ABDf-UFBj-K07lY07cSS3cACFcs14NeVWCIe_t6Cp8T47axjGZNdvBg"
   } #iam
   git = {
     url = "ssh://git@github.com/matyushkim/test_yc_argo.git"
@@ -21,7 +21,7 @@ provider "flux" {
 
 provider "github" {
   owner = var.github_org
-  token = "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"
+  token = "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"
 }
 
 resource "tls_private_key" "flux" {
