@@ -1,12 +1,23 @@
 terraform {
+  required_version = ">=1.1.5"
+
   required_providers {
+    flux = {
+      source = "fluxcd/flux"
+    }
     yandex = {
       source = "yandex-cloud/yandex"
     }
+    kind = {
+      source  = "tehcyx/kind"
+      version = ">=0.0.16"
+    }
+    github = {
+      source  = "integrations/github"
+      version = ">=5.18.0"
+    }
   }
-  required_version = ">= 0.13"
 }
-
 provider "yandex" {
   token     = "y0_AgAAAABwsx0nAATuwQAAAADti3fuwahuPEZHRTCBvFE6X3Cn2Kmep3k"
   cloud_id  = "b1g1f73gcm5vet9spf42"
@@ -14,13 +25,8 @@ provider "yandex" {
   zone      = "ru-central1-a"
 }
 
-# resource "yandex_kubernetes_cluster" "test_fluxcd" {
-#   name        = "test_fluxcd"
-#   description = "My Kubernetes Cluster"
-#   # network_id  = "<ID вашей сети>"
+provider "kind" {}
 
-#   master {
-#     version = "1.15"
-#     zone    = "ru-central1-a"
-#   }
-# }
+resource "kind_cluster" "this" {
+  name = "flux-e2e"
+}
