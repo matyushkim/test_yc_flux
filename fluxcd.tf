@@ -14,14 +14,14 @@ provider "flux" {
     url = "ssh://git@github.com/matyushkim/test_yc_argo.git"
     ssh = {
       username    = "git"
-      private_key = "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"
+      private_key = tls_private_key.flux.private_key_pem
     }
   }
 }
 
 provider "github" {
   owner = var.github_org
-  token = var.github_token
+  token = "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"
 }
 
 resource "tls_private_key" "flux" {

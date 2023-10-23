@@ -11,7 +11,7 @@ variable "github_org" {
 
 variable "github_repository" {
   type    = string
-  default = "github.com/matyushkim/test_yc_argo"
+  default = "test_yc_argo"
 }
 
 # variable "flux_secret" {
