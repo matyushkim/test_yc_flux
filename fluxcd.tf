@@ -31,15 +31,15 @@ resource "tls_private_key" "flux" {
 
 resource "github_repository_deploy_key" "this" {
   title      = "Flux"
-  repository = "ssh://git@github.com/matyushkim/test_yc_argo.git"
-  key        = "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"
+  repository = var.github_repository
+  key        = tls_private_key.flux.public_key_openssh
   read_only  = "false"
 }
 
 resource "flux_bootstrap_git" "this" {
   depends_on = [github_repository_deploy_key.this]
 
-  path = "gitops/clusters/brf"
+  path = "fluxcd/"
 
   components_extra = ["image-reflector-controller", "image-automation-controller"]
 
