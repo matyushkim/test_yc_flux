@@ -5,6 +5,15 @@ variable "buckets" {
     name = string
     acl  = string
   }))
+  default = [{
+    name = "bucket1"
+    acl  = "public-read"
+    },
+    {
+      name = "bucket2"
+      acl  = "private"
+    }
+  ]
   description = "List of bucket names with acls"
 }
 
