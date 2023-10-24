@@ -16,4 +16,24 @@ variable "service_account_id" {
 variable "folder_id" {
   type        = string
   description = "Folder ID"
+  sensitive   = true
+
+}
+
+variable "token" {
+  type        = string
+  description = "token"
+  sensitive   = true
+}
+
+variable "cloud_id" {
+  type        = string
+  description = "cloud_id"
+  sensitive   = true
+
+}
+
+variable "zone" {
+  type        = string
+  description = "zone"
 }
