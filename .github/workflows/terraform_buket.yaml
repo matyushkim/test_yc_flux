@@ -30,8 +30,8 @@ jobs:
           with:
             terraform_version: 1.5.7    
           
-        # - name: Init test
-        #   run : terraform init 
+        - name: Init test
+          run : terraform init 
 
         # - name: Validate test
         #   run : terraform validate 
