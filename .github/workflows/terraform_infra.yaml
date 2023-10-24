@@ -40,8 +40,22 @@ jobs:
         - name: Install terraform
           uses: hashicorp/setup-terraform@v2    
           with:
-            terraform_version: 1.5.7    
-          
+            terraform_version: 1.5.7 
+            
+        - name: config terraform
+          run : |
+            cat <<EOF >> ~/.terraformrc
+            provider_installation {
+                network_mirror {
+                url = "https://terraform-mirror.yandexcloud.net/"
+                include = ["registry.terraform.io/*/*"]
+                }
+                direct {
+                exclude = ["registry.terraform.io/*/*"]
+                }
+            }
+            EOF
+                
         - name: Terraform init
           run : |
             terraform init \
