@@ -15,7 +15,7 @@ on:
             - 'terraform/infra/**/*.yaml'
         
 env:
-    working-directory: terraform/bucket
+    working-directory: terraform/infra
     TF_VAR_zone: ${{ vars.YC_REGION }}
     TF_VAR_cloud_id: ${{ secrets.YC_CLOUD_ID }}
     TF_VAR_token: ${{ secrets.YC_TOCKEN }}
