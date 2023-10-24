@@ -6,11 +6,11 @@ variable "buckets" {
     acl  = string
   }))
   default = [{
-    name = "bucket1"
+    name = "matyushkin-buckets-test1",
     acl  = "public-read"
     },
     {
-      name = "bucket2"
+      name = "matyushkin-buckets-test2"
       acl  = "private"
     }
   ]
