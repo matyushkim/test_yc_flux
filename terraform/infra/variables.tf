@@ -17,5 +17,3 @@ variable "github_url" {
   type    = string
   default = "ssh://git@github.com/matyushkim/test_yc_argo.git"
 }
-
-
