@@ -6,11 +6,15 @@ variable "buckets" {
     acl  = string
   }))
   default = [{
-    name = "matyushkin-buckets-test1",
+    name = "evronelabs-webapplication-store",
     acl  = "public-read"
     },
     {
-      name = "matyushkin-buckets-test2"
+      name = "evronelabs-victoriametrics-store "
+      acl  = "private"
+    },
+    {
+      name = "evronelabs-loki-store"
       acl  = "private"
     }
   ]

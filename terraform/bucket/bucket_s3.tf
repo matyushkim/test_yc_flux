@@ -15,7 +15,6 @@ resource "yandex_storage_bucket" "this" {
   acl    = each.value.acl
 }
 
-
 resource "yandex_storage_bucket" "bucket" {
   count  = length(var.buckets)
   bucket = var.buckets[count.index].name
