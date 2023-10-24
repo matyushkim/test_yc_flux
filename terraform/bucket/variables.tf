@@ -16,6 +16,10 @@ variable "buckets" {
     {
       name = "evronelabs-loki-store",
       acl  = "private"
+    },
+    {
+      name = "evronelabs-terraform-state-store",
+      acl  = "private"
     }
   ]
   description = "List of bucket names with acls"
