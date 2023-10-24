@@ -46,4 +46,4 @@ variable "cloud_id" {
 variable "zone" {
   type        = string
   description = "zone"
-}  
+}    
