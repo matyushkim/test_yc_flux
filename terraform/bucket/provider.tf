@@ -1,11 +1,12 @@
 terraform {
-  required_version = ">=1.1.5"
+  # required_version = ">=1.1.5"
 
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
     }
   }
+  required_version = ">= 0.13"
 }
 provider "yandex" {
   token     = var.token
