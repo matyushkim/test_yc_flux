@@ -1,3 +1,10 @@
+provider "yandex" {
+  token     = var.token
+  cloud_id  = var.cloud_id
+  folder_id = var.folder_id
+  zone      = var.zone
+}
+
 terraform {
   required_version = ">=1.1.5"
 
@@ -13,7 +20,4 @@ terraform {
       version = ">=5.18.0"
     }
   }
-}
-provider "yandex" {
-  zone = "ru-central1-a"
 }
