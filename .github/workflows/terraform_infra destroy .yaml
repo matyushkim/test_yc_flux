@@ -2,20 +2,6 @@ name: terraform destroy infra
 
 on:
   workflow_dispatch:
-
-# on:
-#     push:
-#         branches:
-#             - main
-#         paths:
-#             - 'terraform/infra/**/*.tf'
-#             - 'terraform/infra/**/*.yaml'
-#     pull_request:
-#         branches:
-#             - main
-#         paths:
-#             - 'terraform/infra/**/*.tf'
-#             - 'terraform/infra/**/*.yaml'
         
 env:
     working-directory: terraform/infra
@@ -49,8 +35,7 @@ jobs:
           uses: hashicorp/setup-terraform@v2    
           with:
             terraform_version: 1.5.7 
-            
-                
+                            
         - name: Terraform init
           run : terraform init
 
