@@ -18,4 +18,4 @@ module "yc-vpc" {
       v4_cidr_blocks = ["10.12.0.0/24"]
     }
   ]
-}  
+}    
