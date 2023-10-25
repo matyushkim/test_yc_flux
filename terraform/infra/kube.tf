@@ -1,5 +1,5 @@
 module "kube" {
-  source     = "https://github.com/terraform-yc-modules/terraform-yc-kubernetes.git"
+  source     = "github.com/terraform-yc-modules/terraform-yc-kubernetes"
   network_id = module.yc-vpc.vpc_id
 
   master_locations = [
