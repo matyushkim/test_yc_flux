@@ -20,14 +20,11 @@ terraform {
     # skip_credentials_validation = true
     # skip_metadata_api_check     = true
 
-    bucket    = "evronelabs-terraform-state-store"
-    key       = "infra/terraform.tfstate"
-    region    = "ru-central1"
-    endpoint  = "storage.yandexcloud.net"
-    encrypt   = false
-    token     = var.token
-    cloud_id  = var.cloud_id
-    folder_id = var.folder_id
+    bucket   = "evronelabs-terraform-state-store"
+    key      = "infra/terraform.tfstate"
+    region   = "ru-central1"
+    endpoint = "storage.yandexcloud.net"
+    encrypt  = false
 
 
     skip_credentials_validation = true
