@@ -6,32 +6,19 @@ provider "yandex" {
 }
 
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">=1.1.5"
 
   backend "s3" {
-
-    # endpoint = "storage.yandexcloud.net"
-    # bucket   = "evronelabs-terraform-state-store"
-    # region   = "ru-central1"
-    # key      = "infra/terraform.tfstate"
-    access_key = "YCAJE4TM_oVlS5edgGF9sSeHv"
-    secret_key = "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k"
-
-    # skip_credentials_validation = true
-    # skip_metadata_api_check     = true
-
-    bucket   = "evronelabs-terraform-state-store"
-    key      = "infra/terraform.tfstate"
-    region   = "ru-central1"
-    endpoint = "storage.yandexcloud.net"
-    encrypt  = false
-
-
+    bucket                      = "evronelabs-terraform-state-store"
+    key                         = "infra/terraform.tfstate"
+    region                      = "ru-central1"
+    endpoint                    = "storage.yandexcloud.net"
+    access_key                  = var.access_key
+    secret_key                  = var.secret_key
+    encrypt                     = false
     skip_credentials_validation = true
     skip_region_validation      = true
-    # skip_bucket_ssencryption    = true
-    skip_metadata_api_check = true
-    # skip_bucket_root_access     = true
+    skip_metadata_api_check     = true
   }
 
 
