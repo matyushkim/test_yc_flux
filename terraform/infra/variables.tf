@@ -9,8 +9,11 @@ variable "github_repository" {
 }
 
 variable "github_token" {
-  type    = string
-  default = "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"
+  type        = string
+  description = "My GitHub token"
+
+  sensitive = true
+
 }
 
 variable "github_url" {
