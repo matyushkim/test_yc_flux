@@ -14,12 +14,11 @@ terraform {
     # bucket   = "evronelabs-terraform-state-store"
     # region   = "ru-central1"
     # key      = "infra/terraform.tfstate"
-    # access_key = "id=aje2j1e1r5t1usd1ujp1"
-    # # secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
+    access_key = "YCAJE4TM_oVlS5edgGF9sSeHv"
+    secret_key = "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k"
 
     # skip_credentials_validation = true
     # skip_metadata_api_check     = true
-
 
     bucket    = "evronelabs-terraform-state-store"
     key       = "infra/terraform.tfstate"
