@@ -13,7 +13,7 @@ terraform {
     # bucket   = "evronelabs-terraform-state-store"
     # region   = "ru-central1"
     # key      = "infra/terraform.tfstate"
-    # # access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
+    access_key = "id=aje2j1e1r5t1usd1ujp1"
     # # secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
 
     # skip_credentials_validation = true
@@ -32,6 +32,7 @@ terraform {
     skip_metadata_api_check = true
     # skip_bucket_root_access     = true
   }
+
 
   required_providers {
     flux = {
