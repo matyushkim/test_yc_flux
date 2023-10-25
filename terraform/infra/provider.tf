@@ -30,7 +30,7 @@ terraform {
     skip_region_validation      = true
     skip_bucket_ssencryption    = true
     skip_metadata_api_check     = true
-    skip_bucket_root_access     = true
+    # skip_bucket_root_access     = true
   }
 
   required_providers {
