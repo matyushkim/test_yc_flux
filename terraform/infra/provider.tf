@@ -21,7 +21,6 @@ terraform {
     skip_metadata_api_check     = true
   }
 
-
   required_providers {
     flux = {
       source = "fluxcd/flux"
