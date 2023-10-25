@@ -8,18 +8,17 @@ provider "yandex" {
 terraform {
   required_version = ">=1.1.5"
 
-  # backend "s3" {
-  #   bucket   = "evronelabs-webapplication-store"
-  #   key      = "infra/terraform.tfstate"
-  #   endpoint = "storage.yandexcloud.net"
-  #   region   = var.zone
-  #   # dynamodb_table = "aws-terraform-states-lock"
-  #   encrypt = true
-  #   # terraform init \
-  #   # -backend-config="bucket=evronelabs-webapplication-store" \
-  #   # -backend-config="endpoint=storage.yandexcloud.net" \
-  #   # -backend-config="region= ${{ vars.YC_REGION }} "
-  # }
+  backend "s3" {
+    endpoint = "storage.yandexcloud.net"
+    bucket   = "evronelabs-terraform-state-store"
+    region   = var.zone
+    key      = "infra/terraform.tfstate"
+    # access_key = "value"
+    # secret_key = "value"
+
+    skip_credentials_validation = true
+    skip_metadata_api_check     = true
+  }
 
   required_providers {
     flux = {
