@@ -1,4 +1,4 @@
-name: terraform install infra
+name: terraform destroy infra
 
 on:
   workflow_dispatch:
