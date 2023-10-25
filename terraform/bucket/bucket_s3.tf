@@ -19,4 +19,4 @@ resource "yandex_storage_bucket" "this" {
 #   count  = length(var.buckets)
 #   bucket = var.buckets[count.index].name
 #   acl    = var.buckets[count.index].acl
-# }
+# } 
