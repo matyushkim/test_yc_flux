@@ -23,8 +23,6 @@ env:
     TF_VAR_service_account_id: ${{ secrets.YC_SERVICE_ACCOUNT_ID }}
     TF_VAR_github_org: ${{ github.repository_owner }}
     TF_VAR_github_repository: "test_yc_argo" 
-    TF_VAR_repo_infra_ssh: "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"
-
 
 jobs:
     terraform_infra:
@@ -44,19 +42,19 @@ jobs:
           with:
             terraform_version: 1.5.7 
             
-        # - name: config terraform
-        #   run : |
-        #     cat <<EOF >> ~/.terraformrc
-        #     provider_installation {
-        #         network_mirror {
-        #             url = "https://terraform-mirror.yandexcloud.net/"
-        #             include = ["registry.terraform.io/*/*"]
-        #         }
-        #         direct {
-        #             exclude = ["registry.terraform.io/*/*"]
-        #         }
-        #     }
-        #     EOF
+        - name: config terraform
+          run : |
+            cat <<EOF >> ~/.terraformrc
+            provider_installation {
+                network_mirror {
+                    url = "https://terraform-mirror.yandexcloud.net/"
+                    include = ["registry.terraform.io/*/*"]
+                }
+                direct {
+                    exclude = ["registry.terraform.io/*/*"]
+                }
+            }
+            EOF
                 
         - name: Terraform init
           run : terraform init
