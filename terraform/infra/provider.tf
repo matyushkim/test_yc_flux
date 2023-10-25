@@ -23,7 +23,7 @@ terraform {
     bucket   = "evronelabs-terraform-state-store"
     key      = "infra/terraform.tfstate"
     region   = "ru-central1"
-    endpoint = "https://storage.yandexcloud.net"
+    endpoint = "storage.yandexcloud.net"
     encrypt  = false
 
     skip_credentials_validation = true
