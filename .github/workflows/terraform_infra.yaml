@@ -1,18 +1,21 @@
 name: terraform install infra
 
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - 'terraform/infra/**/*.tf'
-            - 'terraform/infra/**/*.yaml'
-    pull_request:
-        branches:
-            - main
-        paths:
-            - 'terraform/infra/**/*.tf'
-            - 'terraform/infra/**/*.yaml'
+  workflow_dispatch:
+
+# on:
+#     push:
+#         branches:
+#             - main
+#         paths:
+#             - 'terraform/infra/**/*.tf'
+#             - 'terraform/infra/**/*.yaml'
+#     pull_request:
+#         branches:
+#             - main
+#         paths:
+#             - 'terraform/infra/**/*.tf'
+#             - 'terraform/infra/**/*.yaml'
         
 env:
     working-directory: terraform/infra
@@ -42,19 +45,19 @@ jobs:
           with:
             terraform_version: 1.5.7 
             
-        - name: config terraform
-          run : |
-            cat <<EOF >> ~/.terraformrc
-            provider_installation {
-                network_mirror {
-                    url = "https://terraform-mirror.yandexcloud.net/"
-                    include = ["registry.terraform.io/*/*"]
-                }
-                direct {
-                    exclude = ["registry.terraform.io/*/*"]
-                }
-            }
-            EOF
+        # - name: config terraform
+        #   run : |
+        #     cat <<EOF >> ~/.terraformrc
+        #     provider_installation {
+        #         network_mirror {
+        #             url = "https://terraform-mirror.yandexcloud.net/"
+        #             include = ["registry.terraform.io/*/*"]
+        #         }
+        #         direct {
+        #             exclude = ["registry.terraform.io/*/*"]
+        #         }
+        #     }
+        #     EOF
                 
         - name: Terraform init
           run : terraform init
