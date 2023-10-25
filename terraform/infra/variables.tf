@@ -11,10 +11,9 @@ variable "github_repository" {
 variable "github_token" {
   type        = string
   description = "My GitHub token"
-
-  sensitive = true
-
+  sensitive   = true
 }
+
 
 variable "github_url" {
   type    = string
