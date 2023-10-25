@@ -59,8 +59,9 @@ jobs:
         - name: Terraform init
           run : |
             terraform init \
-            -backend-config="bucket=evronelabs-terraform-state-store" \
-            -backend-config="region=${{ vars.YC_REGION }}"
+            -backend-config="bucket=evronelabs-webapplication-store" \
+            -backend-config="endpoint=storage.yandexcloud.net" \
+            -backend-config="region= ${{ vars.YC_REGION }} "
 
         - name: Validate
           run : terraform validate 

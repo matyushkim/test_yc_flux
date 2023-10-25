@@ -9,9 +9,9 @@ terraform {
   required_version = ">=1.1.5"
 
   backend "s3" {
-    key = "evronelabs-terraform-state-store/terraform.tfstate"
+    key = "infra/terraform.tfstate"
     # dynamodb_table = "aws-terraform-states-lock"
-    encrypt = true
+    # encrypt = true
   }
 
   required_providers {
