@@ -34,7 +34,7 @@ variable "folder_id" {
 
 variable "token" {
   type        = string
-  description = "token"
+  description = "token yc"
   sensitive   = true
 }
 
