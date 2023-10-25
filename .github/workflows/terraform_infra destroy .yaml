@@ -19,7 +19,7 @@ env:
     TF_VAR_github_token: ${{ secrets.MY_GITHUB_TOKEN }}
 
 jobs:
-    terraform_infra:
+    terraform_DESTROY_infra:
         permissions: write-all
         runs-on: ubuntu-latest
         defaults:
