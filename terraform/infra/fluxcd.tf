@@ -18,7 +18,6 @@ provider "flux" {
   }
 }
 
-
 provider "github" {
   owner = var.github_org
   token = var.github_token
