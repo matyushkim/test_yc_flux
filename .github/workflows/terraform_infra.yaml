@@ -42,19 +42,19 @@ jobs:
           with:
             terraform_version: 1.5.7 
             
-        # - name: config terraform
-        #   run : |
-        #     cat <<EOF >> ~/.terraformrc
-        #     provider_installation {
-        #         network_mirror {
-        #             url = "https://terraform-mirror.yandexcloud.net/"
-        #             include = ["registry.terraform.io/*/*"]
-        #         }
-        #         direct {
-        #             exclude = ["registry.terraform.io/*/*"]
-        #         }
-        #     }
-        #     EOF
+        - name: config terraform
+          run : |
+            cat <<EOF >> ~/.terraformrc
+            provider_installation {
+                network_mirror {
+                    url = "https://terraform-mirror.yandexcloud.net/"
+                    include = ["registry.terraform.io/*/*"]
+                }
+                direct {
+                    exclude = ["registry.terraform.io/*/*"]
+                }
+            }
+            EOF
                 
         - name: Terraform init
           run : 
