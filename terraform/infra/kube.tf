@@ -18,7 +18,6 @@ module "kube" {
     }
   ]
 
-
   node_groups = {
     "yc-k8s-dev" = {
       description = "Kubernetes nodes group development"
