@@ -3,6 +3,7 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
   description        = "static access key for object storage"
 }
 
+
 // вариант создания через for each с ключами
 resource "yandex_storage_bucket" "this" {
   for_each = { for bucket in var.buckets : bucket.name => bucket }
