@@ -57,12 +57,12 @@ jobs:
         #     EOF
                 
         - name: Terraform init
-          run : terraform init
-          # |
-            # terraform init \
-            # -backend-config="bucket=evronelabs-webapplication-store" \
-            # -backend-config="endpoint=storage.yandexcloud.net" \
-            # -backend-config="region= ${{ vars.YC_REGION }} "
+          run : 
+          |
+            terraform init \
+            -backend-config="bucket=evronelabs-webapplication-store" \
+            -backend-config="endpoint=storage.yandexcloud.net" \
+            -backend-config="region= ${{ vars.YC_REGION }} "
 
         - name: Validate
           run : terraform validate 

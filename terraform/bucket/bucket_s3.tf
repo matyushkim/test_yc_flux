@@ -7,9 +7,9 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 resource "yandex_storage_bucket" "this" {
   for_each = { for bucket in var.buckets : bucket.name => bucket }
 
-  # access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
-  # secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-  # folder_id  = var.folder_id
+  access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
+  secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
+  folder_id  = var.folder_id
 
   bucket = each.key
   acl    = each.value.acl

@@ -9,12 +9,12 @@ terraform {
   required_version = ">=1.1.5"
 
   backend "s3" {
-    endpoint = "storage.yandexcloud.net"
-    bucket   = "evronelabs-terraform-state-store"
-    region   = var.zone
-    key      = "infra/terraform.tfstate"
-    # access_key = "value"
-    # secret_key = "value"
+    endpoint   = "storage.yandexcloud.net"
+    bucket     = "evronelabs-terraform-state-store"
+    region     = var.zone
+    key        = "infra/terraform.tfstate"
+    access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
+    secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
 
     skip_credentials_validation = true
     skip_metadata_api_check     = true
