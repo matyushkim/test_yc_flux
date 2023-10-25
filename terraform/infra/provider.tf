@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     endpoint = "storage.yandexcloud.net"
     bucket   = "evronelabs-terraform-state-store"
-    region   = "ru-central1-a"
+    region   = "ru-central1"
     key      = "infra/terraform.tfstate"
     # access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
     # secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
