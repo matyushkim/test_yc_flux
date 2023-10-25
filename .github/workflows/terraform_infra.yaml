@@ -62,6 +62,7 @@ jobs:
             terraform init \
             -backend-config="bucket=evronelabs-webapplication-store" \
             -backend-config="endpoint=storage.yandexcloud.net" \
+            -backend-config="key= "infra/terraform.tfstate"
             -backend-config="region= ${{ vars.YC_REGION }} "
 
         - name: Validate
