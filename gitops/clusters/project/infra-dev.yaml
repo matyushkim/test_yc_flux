@@ -23,7 +23,7 @@ metadata:
   name: development-apps
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1m0s
   path: ./gitops/infra/services
   prune: true
   sourceRef:
