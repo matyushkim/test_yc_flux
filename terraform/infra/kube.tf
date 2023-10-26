@@ -20,7 +20,18 @@ module "kube" {
 
   node_groups = {
     "yc-k8s-dev" = {
-      description = "Kubernetes nodes group development"
+      description   = "Kubernetes nodes group development"
+      platform_id   = "standard-v3"
+      node_cores    = 2
+      node_memory   = 2
+      node_gpus     = 0
+      core_fraction = 20
+      disk_type     = "network-ssd"
+      disk_size     = 32
+      preemptible   = true
+      nat           = false
+      ipv4          = true
+      ipv6          = false
       fixed_scale = {
         size = 1
       }
