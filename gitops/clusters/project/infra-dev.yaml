@@ -15,7 +15,7 @@ spec:
     # exclude all
     /*
     # include gitops directory
-    !/gitops/apps 
+    !/gitops/infra/services
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
