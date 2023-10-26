@@ -28,4 +28,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: development-apps
+    name: infra-dev
