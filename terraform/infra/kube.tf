@@ -25,7 +25,7 @@ module "kube" {
       node_cores    = 2
       node_memory   = 2
       node_gpus     = 0
-      core_fraction = 20
+      core_fraction = 50
       disk_type     = "network-ssd"
       disk_size     = 32
       preemptible   = true
