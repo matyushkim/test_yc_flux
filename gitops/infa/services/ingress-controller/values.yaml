@@ -1,0 +1,14 @@
+---
+controller:
+  admissionWebhooks:
+    patch:
+      tolerations:
+        - key: environment
+          operator: Equal
+          value: infra
+          effect: NoSchedule
+  tolerations:
+    - key: environment
+      operator: Equal
+      value: infra
+      effect: NoSchedule
