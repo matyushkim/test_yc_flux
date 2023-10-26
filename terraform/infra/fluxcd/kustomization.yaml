@@ -12,11 +12,11 @@ patches:
       spec:
         template:
           spec:
-            tolerations:
-              - effect: NoSchedule
-                key: environment
-                operator: Equal
-                value: flux      
+            # tolerations:
+            #   - effect: NoSchedule
+            #     key: environment
+            #     operator: Equal
+            #     value: flux      
     target:
       kind: Deployment
       labelSelector: app.kubernetes.io/part-of=flux
