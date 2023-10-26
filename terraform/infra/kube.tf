@@ -30,20 +30,20 @@ module "kube" {
       }
     },
 
-    "yc-k8s-prod" = {
-      description = "Kubernetes nodes group prod"
-      auto_scale = {
-        min     = 1
-        max     = 2
-        initial = 1
-      }
-      node_labels = {
-        role        = "worker-02"
-        environment = "prod"
-      }
+    # "yc-k8s-prod" = {
+    #   description = "Kubernetes nodes group prod"
+    #   auto_scale = {
+    #     min     = 1
+    #     max     = 2
+    #     initial = 1
+    #   }
+    #   node_labels = {
+    #     role        = "worker-02"
+    #     environment = "prod"
+    #   }
 
-      max_expansion   = 1
-      max_unavailable = 1
-    }
+    #   max_expansion   = 1
+    #   max_unavailable = 1
+    # }
   }
 }
