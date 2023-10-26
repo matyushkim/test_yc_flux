@@ -24,7 +24,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./gitops/apps/
+  path: ./gitops/infra/services
   prune: true
   sourceRef:
     kind: GitRepository
