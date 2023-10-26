@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket   = "evronelabs-terraform-state-store"
-    key      = "new/infra/terraform.tfstate"
+    key      = "infra/terraform.tfstate"
     region   = "ru-central1"
     endpoint = "storage.yandexcloud.net"
     # access_key                  = var.access_key

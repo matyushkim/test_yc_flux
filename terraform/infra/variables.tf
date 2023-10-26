@@ -75,18 +75,18 @@ variable "buckets" {
     acl  = string
   }))
   default = [
-    # {
-    #   name = "evronelabs-webapplication-store",
-    #   acl  = "public-read"
-    # },
-    # {
-    #   name = "evronelabs-victoriametrics-store",
-    #   acl  = "private"
-    # },
-    # {
-    #   name = "evronelabs-loki-store",
-    #   acl  = "private"
-    # },
+    {
+      name = "evronelabs-webapplication-store",
+      acl  = "public-read"
+    },
+    {
+      name = "evronelabs-victoriametrics-store",
+      acl  = "private"
+    },
+    {
+      name = "evronelabs-loki-store",
+      acl  = "private"
+    },
     # {
     #   name = "evronelabs-terraform-state-store",
     #   acl  = "private"
