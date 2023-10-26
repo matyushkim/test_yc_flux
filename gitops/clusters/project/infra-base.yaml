@@ -28,9 +28,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: development-apps
-  # postBuild:
-  #   substitute:
-  #     tenant_environment: development
-  #     tenant_domain: dev.
-  #     tenant_toleration: dev
+    name: infrastructure-services
