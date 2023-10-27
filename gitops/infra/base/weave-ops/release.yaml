@@ -24,7 +24,7 @@ spec:
   values:
     adminUser:
       create: true
-      passwordHash: ba92e08cc854941e6f4d8270fb4b864a8f1640da9ec045b245bc35f9c2f85185
+      passwordHash: $2a$12$/90yfwPUmWmxknSo/rlnW.c3n/JHm0ZFCRV1ny1L6g70hpxPwJTRq
       username: "admin"
     ingress:
       enabled: true
