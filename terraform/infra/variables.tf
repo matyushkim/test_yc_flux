@@ -1,20 +1,20 @@
-variable "node_groups_defaults" {
-  description = "Map of common default values for Node groups."
-  type        = map(any)
-  default = {
-    platform_id   = "standard-v3"
-    node_cores    = 2
-    node_memory   = 2
-    node_gpus     = 0
-    core_fraction = 20
-    disk_type     = "network-ssd"
-    disk_size     = 32
-    preemptible   = true
-    nat           = false
-    ipv4          = true
-    ipv6          = false
-  }
-}
+# variable "node_groups_defaults" {
+#   description = "Map of common default values for Node groups."
+#   type        = map(any)
+#   default = {
+#     platform_id   = "standard-v3"
+#     node_cores    = 2
+#     node_memory   = 2
+#     node_gpus     = 0
+#     core_fraction = 20
+#     disk_type     = "network-ssd"
+#     disk_size     = 32
+#     preemptible   = true
+#     nat           = false
+#     ipv4          = true
+#     ipv6          = false
+#   }
+# }
 
 variable "github_org" {
   type    = string
@@ -80,18 +80,18 @@ variable "buckets" {
     acl  = string
   }))
   default = [
-    {
-      name = "evronelabs-webapplication-store",
-      acl  = "public-read"
-    },
-    {
-      name = "evronelabs-victoriametrics-store",
-      acl  = "private"
-    },
-    {
-      name = "evronelabs-loki-store",
-      acl  = "private"
-    },
+    # {
+    #   name = "evronelabs-webapplication-store",
+    #   acl  = "public-read"
+    # },
+    # {
+    #   name = "evronelabs-victoriametrics-store",
+    #   acl  = "private"
+    # },
+    # {
+    #   name = "evronelabs-loki-store",
+    #   acl  = "private"
+    # },
     # {
     #   name = "evronelabs-terraform-state-store",
     #   acl  = "private"

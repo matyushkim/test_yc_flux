@@ -1,6 +1,6 @@
 module "yc-vpc" {
   source              = "github.com/terraform-yc-modules/terraform-yc-vpc.git"
-  network_name        = "test-module-network-mat"
+  network_name        = "test-module-network"
   network_description = "Test network created with module"
   private_subnets = [{
     name           = "subnet-1"
