@@ -31,7 +31,7 @@ env:
     AWS_ACCESS_KEY: ${{ secrets.YC_ACCESS_KEY_S3 }}
     AWS_SECRET_KEY: ${{ secrets.YC_SECRET_KEY_S3 }} 
     TF_VAR_github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-    TF_VAR_token_iam: ${{ secrets.YC_TOCKEN_IAM }}
+    TF_VAR_iam_token: ${{ secrets.YC_TOCKEN_IAM }}
 
 jobs:
     terraform_infra:
