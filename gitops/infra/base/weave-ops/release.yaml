@@ -3,7 +3,7 @@ kind: HelmRelease
 metadata:
   name: weave-gitops
 spec:
-  interval: 1h0m0s
+  interval: 1m0s
   chart:
     spec:
       chart: weave-gitops
