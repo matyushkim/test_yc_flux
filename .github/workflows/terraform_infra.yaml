@@ -53,7 +53,7 @@ jobs:
             service-account-token: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
             type-token: iam
         - name: Test
-          run: echo "TF_VAR_token_iam=${{ steps.generation-iam-token.outputs.iam-token }}">>$GITHUB_ENV
+          run: echo "TF_VAR_iam_token=${{ steps.generation-iam-token.outputs.iam-token }}">>$GITHUB_ENV
 
         - name: Install terraform
           uses: hashicorp/setup-terraform@v2    
