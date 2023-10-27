@@ -37,11 +37,8 @@ resource "github_repository_deploy_key" "this" {
 
 
 resource "flux_bootstrap_git" "this" {
-  depends_on = [github_repository_deploy_key.this]
-
-  path = "gitops/clusters/project"
-
-  components_extra = ["image-reflector-controller", "image-automation-controller"]
-
+  depends_on             = [github_repository_deploy_key.this]
+  path                   = "gitops/clusters/project"
+  components_extra       = ["image-reflector-controller", "image-automation-controller"]
   kustomization_override = file("${path.module}/fluxcd/kustomization.yaml")
 }
