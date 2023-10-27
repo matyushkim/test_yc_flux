@@ -26,6 +26,9 @@ spec:
   interval: 1m0s
   path: ./gitops/infra/services
   prune: true
+  dependsOn:
+    - name: infra-base
+      namespace: flux-system
   sourceRef:
     kind: GitRepository
     name: development-apps
