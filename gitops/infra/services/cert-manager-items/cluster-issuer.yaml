@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: mat-test-flux
+  name: letsencrypt-prod
 spec:
   acme:
-    email: maksmatyuskin93@gmail.com
-    server: https://acme-v02.api.letsencrypt.org/directory
+    email: matyshkinm@evrone.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: mat-test-flux-issuer-account-key
+      name: letsencrypt-prod
     solvers:
-    - selector:
-        dnsZones:
-          -   
+    - http01:
+        ingress:
+          class: 
