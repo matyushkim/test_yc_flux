@@ -53,7 +53,7 @@ jobs:
             service-account-token: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
             type-token: iam
         - name: Test
-          run: echo ${{ steps.generation-iam-token.outputs.iam-token }}
+          run: echo "TF_VAR_token_iam=${{ steps.generation-iam-token.outputs.iam-token }}" >> $GITHUB_ENV
 
         - name: Install terraform
           uses: hashicorp/setup-terraform@v2    
@@ -71,9 +71,7 @@ jobs:
 
         - name: Terraform Plan
           id: plan
-          run: |
-            export IAM_TOKEN=${{ steps.generation-iam-token.outputs.iam-token }}
-            terraform plan -var="iam_token=$IAM_TOKEN"  -no-color         
+          run:             terraform plan  -no-color         
             
         - uses: actions/github-script@v6
           if: github.event_name == 'pull_request'
@@ -114,6 +112,4 @@ jobs:
         
         - name: Terraform Apply
           # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-          run : |
-            export IAM_TOKEN=${{ steps.generation-iam-token.outputs.iam-token }}
-            terraform apply -var="iam_token=$IAM_TOKEN" -auto-approve
+          run :        terraform apply -auto-approve
