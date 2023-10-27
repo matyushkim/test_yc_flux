@@ -25,7 +25,7 @@ spec:
     adminUser:
       create: true
       passwordHash: "123454321"
-      username: admin
+      username: "admin"
     ingress:
       enabled: true
       className: nginx
