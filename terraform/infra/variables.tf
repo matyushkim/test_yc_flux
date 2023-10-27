@@ -51,10 +51,15 @@ variable "folder_id" {
 
 variable "token" {
   type        = string
-  description = "token yc"
+  description = "token yc qauth"
   sensitive   = true
 }
 
+variable "token_iam" {
+  type        = string
+  description = "token yc iam"
+  sensitive   = true
+}
 variable "cloud_id" {
   type        = string
   description = "cloud_id"

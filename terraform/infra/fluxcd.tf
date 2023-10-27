@@ -2,7 +2,7 @@ provider "flux" {
   kubernetes = {
     host                   = module.kube.external_v4_endpoint
     cluster_ca_certificate = module.kube.cluster_ca_certificate
-    token                  = var.token
+    token                  = var.token_iam
     # exec = {
     #   api_version = "client.authentication.k8s.io/v1beta1",
     #   args        = ["k8s", "create-token"],
@@ -29,7 +29,7 @@ resource "tls_private_key" "flux" {
 }
 
 resource "github_repository_deploy_key" "this" {
-  title      = "Flux_new"
+  title      = "Flux_new_iam"
   repository = var.github_repository
   key        = tls_private_key.flux.public_key_openssh
   read_only  = "false"
