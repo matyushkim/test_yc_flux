@@ -24,7 +24,7 @@ spec:
   values:
     adminUser:
       create: true
-      passwordHash: -------
+      passwordHash: "123454321"
       username: admin
     ingress:
       enabled: true
