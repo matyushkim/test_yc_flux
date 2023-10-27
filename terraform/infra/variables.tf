@@ -55,7 +55,7 @@ variable "token" {
   sensitive   = true
 }
 
-variable "token_iam" {
+variable "iam_token" {
   type        = string
   description = "token yc iam"
   sensitive   = true

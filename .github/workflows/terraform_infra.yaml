@@ -31,7 +31,7 @@ env:
     AWS_ACCESS_KEY: ${{ secrets.YC_ACCESS_KEY_S3 }}
     AWS_SECRET_KEY: ${{ secrets.YC_SECRET_KEY_S3 }} 
     TF_VAR_github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-    TF_VAR_token_iam: ${{ secrets.YC_TOCKEN_IAM }}
+    # TF_VAR_token_iam: ${{ secrets.YC_TOCKEN_IAM }}
 
 jobs:
     terraform_infra:
@@ -45,6 +45,15 @@ jobs:
 
         - name: Git clone my repo
           uses: actions/checkout@v4
+
+        - name: Create IAM token
+          id: generation-iam-token
+          uses: bigtows/yc-token@latest
+          with:
+            service-account-token: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
+            type-token: iam
+        - name: Test
+          run: echo ${{ steps.generation-iam-token.outputs.iam-token }}
 
         - name: Install terraform
           uses: hashicorp/setup-terraform@v2    
@@ -103,4 +112,6 @@ jobs:
         
         - name: Terraform Apply
           # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-          run : terraform apply -auto-approve
+          run : |
+            export IAM_TOKEN=${{ steps.generation-iam-token.outputs.iam-token }}
+            terraform apply -var="iam_token=$IAM_TOKEN" -auto-approve

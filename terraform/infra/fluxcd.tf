@@ -2,7 +2,7 @@ provider "flux" {
   kubernetes = {
     host                   = module.kube.external_v4_endpoint
     cluster_ca_certificate = module.kube.cluster_ca_certificate
-    token                  = var.token_iam
+    token                  = var.iam_token
     # exec = {
     #   api_version = "client.authentication.k8s.io/v1beta1",
     #   args        = ["k8s", "create-token"],
