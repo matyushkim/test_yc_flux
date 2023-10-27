@@ -1,0 +1,62 @@
+---
+promtail:
+  tolerations:
+    - operator: Exists
+  serviceMonitor:
+    enabled: false
+    additionalLabels:
+      app.kubernetes.io/part-of: kube-prometheus-
+loki:
+
+  extraEnvFrom:
+    - secretRef:
+        name: aws-credentials
+  config:
+    server:
+      http_server_read_timeout: 600s
+      http_server_write_timeout: 600s
+      grpc_server_max_recv_msg_size: 20388078
+      grpc_server_max_send_msg_size: 20388078
+    schema_config:
+      configs:
+        - from: "2022-01-11"
+          store: boltdb-shipper
+          object_store: s3
+          schema: v12
+          index:
+            prefix: loki_index_
+            period: 24h
+    table_manager:
+      retention_period: 2100h
+      retention_deletes_enabled: true
+    chunk_store_config:
+      max_look_back_period: 2100h
+    storage_config:
+      boltdb_shipper:
+        shared_store: s3
+      aws:
+        bucketnames: "evronelabs-loki-store"
+        region: "ru-central1"
+
+  tolerations:
+    - key: environment
+      operator: Equal
+      value: infra
+      effect: NoSchedule
+
+  # storage:
+  #   bucketNames:
+  #     chunks: chunks
+  #     ruler: ruler
+  #     admin: admin
+  #   type: s3
+  #   s3:
+  #     s3: null
+  #     endpoint: null
+  #     region: null
+  #     secretAccessKey: null
+  #     accessKeyId: null
+  #     signatureVersion: null
+  #     s3ForcePathStyle: false
+  #     insecure: false
+  #     http_config: {}

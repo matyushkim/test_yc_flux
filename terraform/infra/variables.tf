@@ -88,10 +88,10 @@ variable "buckets" {
     #   name = "evronelabs-victoriametrics-store",
     #   acl  = "private"
     # },
-    # {
-    #   name = "evronelabs-loki-store",
-    #   acl  = "private"
-    # },
+    {
+      name = "evronelabs-loki-store",
+      acl  = "private"
+    },
     # {
     #   name = "evronelabs-terraform-state-store",
     #   acl  = "private"
