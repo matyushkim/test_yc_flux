@@ -27,13 +27,13 @@ persistence:
 #       - grafana.
 #       secretName: "matyshkin-com-wildcard-tls" 
 
-# datasources:
-#   datasources.yaml:
-#     apiVersion: 1
-#     datasources:
-#     - name: Loki
-#       type: loki
-#       access: proxy
-#       url: http://loki.loki:3100
-#       jsonData:
-#         maxLines: 1000
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Loki
+      type: loki
+      access: proxy
+      url: http://loki.loki:3100
+      jsonData:
+        maxLines: 1000
