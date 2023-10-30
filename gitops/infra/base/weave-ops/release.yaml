@@ -30,7 +30,8 @@ spec:
       enabled: true
       className: nginx
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: wo.infra.matyshkinm.evrone.app
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        # external-dns.alpha.kubernetes.io/hostname: wo.infra.matyshkinm.evrone.app
     #     # Authentication
     #     nginx.ingress.kubernetes.io/auth-url: ----
     #     nginx.ingress.kubernetes.io/auth-signin: ---
@@ -48,4 +49,3 @@ spec:
     #     operator: Equal
     #     value: infra
     #     effect: NoSchedule 
-    
