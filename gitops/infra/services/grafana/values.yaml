@@ -20,10 +20,10 @@ ingress:
   pathType: Prefix
   hosts:
       - grafana.infra.matyshkinm.evrone.app
-  tls:
-    - hosts:
-      - grafana.infra.matyshkinm.evrone.app
-  secretName: matyshkin-com-grafana-tls
+  tls: 
+   -   secretName: matyshkin-com-grafana-tls
+       hosts:
+       - grafana.infra.matyshkinm.evrone.app
 
 datasources:
   datasources.yaml:
