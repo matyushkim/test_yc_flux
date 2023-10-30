@@ -38,7 +38,7 @@ spec:
       tls:
         - hosts:
           - wo.infra.matyshkinm.evrone.app
-          secretName: matyshkin-com-tls
+          secretName: matyshkin-com-new-tls
       hosts:
       - host: wo.infra.matyshkinm.evrone.app
         paths:
