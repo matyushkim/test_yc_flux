@@ -25,7 +25,7 @@ loki:
           schema: v12
           index:
             prefix: loki_index_
-            period: 24h
+            period: 1h
     table_manager:
       retention_period: 2100h
       retention_deletes_enabled: true

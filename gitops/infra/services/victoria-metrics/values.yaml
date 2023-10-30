@@ -2,15 +2,15 @@
 server:
   scrape:
     enabled: true
-  admissionWebhooks:
-    patch:
-      tolerations:
-        - key: environment
-          operator: Equal
-          value: infra
-          effect: NoSchedule
-  tolerations:
-    - key: environment
-      operator: Equal
-      value: infra
-      effect: NoSchedule
+  # admissionWebhooks:
+  #   patch:
+  #     tolerations:
+  #       - key: environment
+  #         operator: Equal
+  #         value: infra
+  #         effect: NoSchedule
+  # tolerations:
+  #   - key: environment
+  #     operator: Equal
+  #     value: infra
+  #     effect: NoSchedule
