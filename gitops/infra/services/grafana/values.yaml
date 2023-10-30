@@ -11,21 +11,24 @@ tolerations:
 persistence:
   enabled: false
 
-# ingress:
-#   enabled: true
-#   ingressClassName: nginx
-#   annotations:
-#     external-dns.alpha.kubernetes.io/hostname: grafana.
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # external-dns.alpha.kubernetes.io/hostname: wo.infra.matyshkinm.evrone.app
 #     # Authentication
-#     nginx.ingress.kubernetes.io/auth-url: ""
-#     nginx.ingress.kubernetes.io/auth-signin: ""
-#   hosts:
-#   - grafana.
-#   path: /
-#   tls:
-#     - hosts:
-#       - grafana.
-#       secretName: "matyshkin-com-wildcard-tls" 
+#     nginx.ingress.kubernetes.io/auth-url: ----
+#     nginx.ingress.kubernetes.io/auth-signin: ---
+  tls:
+    - hosts:
+      - grafana.infra.matyshkinm.evrone.app
+      secretName: matyshkin-com-grafana-tls
+  hosts:
+  - host: grafana.infra.matyshkinm.evrone.app
+    paths:
+      - path: /
+        pathType: ImplementationSpecific
 
 datasources:
   datasources.yaml:
