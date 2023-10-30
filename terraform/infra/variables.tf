@@ -16,7 +16,6 @@
 #   }
 # }
 
-
 variable "aws_secret_access_key" {
   type    = string
   default = "secret_key"
