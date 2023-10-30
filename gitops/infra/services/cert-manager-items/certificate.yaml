@@ -4,12 +4,12 @@ kind: Certificate
 metadata:
   name: mat-test-flux
 spec:
-  secretName: mat-test-flux-wildcard-tls
+  secretName: matyshkin-com-wildcard-tls
   secretTemplate:
     annotations:
       replicator.v1.mittwald.de/replicate-to: development,production,weave-gitops,grafana,vault,oauth2-proxy
   issuerRef:
-    name: mat-test-flux
+    name: matyshkin-com
     kind: ClusterIssuer
   commonName:
   dnsNames:

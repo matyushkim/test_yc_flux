@@ -25,7 +25,7 @@ ingress:
   tls:
     - hosts:
       - grafana.
-      secretName: "matyshkin-com-wildcard-tls"
+      secretName: "matyshkin-com-wildcard-tls" 
 
 datasources:
   datasources.yaml:
