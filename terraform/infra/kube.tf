@@ -23,7 +23,7 @@ module "kube" {
       description   = "Kubernetes nodes group development"
       platform_id   = "standard-v3"
       node_cores    = 2
-      node_memory   = 2
+      node_memory   = 4
       node_gpus     = 0
       core_fraction = 50
       disk_type     = "network-ssd"
