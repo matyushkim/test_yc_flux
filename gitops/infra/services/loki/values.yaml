@@ -8,9 +8,9 @@ promtail:
       app.kubernetes.io/part-of: kube-prometheus-
 loki:
 
-  extraEnvFrom:
-    - secretRef:
-        name: aws-credentials
+  # extraEnvFrom:
+  #   - secretRef:
+  #       name: aws-credentials
   config:
     server:
       http_server_read_timeout: 600s
@@ -35,6 +35,8 @@ loki:
       boltdb_shipper:
         shared_store: s3
       aws:
+        # access-key: 
+        # secret-key: 
         bucketnames: "evronelabs-loki-store"
         region: "ru-central1"
 
