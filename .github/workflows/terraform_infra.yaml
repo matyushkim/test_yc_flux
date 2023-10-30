@@ -52,7 +52,7 @@ jobs:
           with:
             service-account-token: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
             type-token: iam
-        - name: Test
+        - name: Save IAM token in ENVIRONMENT VAR
           run: echo "TF_VAR_iam_token=${{ steps.generation-iam-token.outputs.iam-token }}">>$GITHUB_ENV
 
         - name: Install terraform
