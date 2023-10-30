@@ -5,7 +5,7 @@ resource "kubernetes_secret" "aws_credentials" {
   }
 
   data = {
-    AWS_ACCESS_KEY_ID     = var.access_key
-    AWS_SECRET_ACCESS_KEY = var.secret_key
+    AWS_ACCESS_KEY_ID     = var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
   }
 }
