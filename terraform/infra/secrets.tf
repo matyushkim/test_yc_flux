@@ -1,7 +1,7 @@
 resource "kubernetes_secret" "aws_credentials" {
   metadata {
     name      = "aws-credentials"
-    namespace = loki
+    namespace = "loki"
   }
 
   data = {
