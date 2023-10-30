@@ -11,6 +11,7 @@ spec:
   issuerRef:
     name: matyshkin-com
     kind: ClusterIssuer
-  commonName:
+  commonName: "*.infra.matyshkinm.evrone.app"
   dnsNames:
-  - 
+  - ".infra.matyshkinm.evrone.app"
+  - "*.infra.matyshkinm.evrone.app"
