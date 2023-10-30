@@ -16,10 +16,6 @@ ingress:
   className: nginx
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    # external-dns.alpha.kubernetes.io/hostname: wo.infra.matyshkinm.evrone.app
-#     # Authentication
-#     nginx.ingress.kubernetes.io/auth-url: ----
-#     nginx.ingress.kubernetes.io/auth-signin: ---
   tls:
     - hosts:
       - grafana.infra.matyshkinm.evrone.app
