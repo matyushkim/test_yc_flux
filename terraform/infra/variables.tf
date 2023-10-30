@@ -16,6 +16,17 @@
 #   }
 # }
 
+
+variable "secret_key" {
+  type    = string
+  default = "secret_key"
+}
+
+variable "access_key" {
+  type    = string
+  default = "access_key"
+}
+
 variable "github_org" {
   type    = string
   default = "matyushkim"
