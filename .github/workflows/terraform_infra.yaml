@@ -26,8 +26,8 @@ env:
     TF_VAR_service_account_id: ${{ secrets.YC_SERVICE_ACCOUNT_ID }}
     TF_VAR_github_org: ${{ github.repository_owner }}
     TF_VAR_github_repository: "test_yc_argo" 
-    TF_VAR_access_key: ${{ secrets.YC_ACCESS_KEY_S3 }}
-    TF_VAR_secret_key: ${{ secrets.YC_SECRET_KEY_S3 }}
+    TF_VAR_aws_access_key_id: ${{ secrets.YC_ACCESS_KEY_S3 }}
+    TF_VAR_aws_secret_access_key: ${{ secrets.YC_SECRET_KEY_S3 }}
     AWS_ACCESS_KEY: ${{ secrets.YC_ACCESS_KEY_S3 }}
     AWS_SECRET_KEY: ${{ secrets.YC_SECRET_KEY_S3 }} 
     TF_VAR_github_token: ${{ secrets.MY_GITHUB_TOKEN }}
