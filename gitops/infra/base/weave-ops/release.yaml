@@ -26,23 +26,23 @@ spec:
       create: true
       passwordHash: $2a$12$/90yfwPUmWmxknSo/rlnW.c3n/JHm0ZFCRV1ny1L6g70hpxPwJTRq
       username: "admin"
-    # ingress:
-    #   enabled: true
-    #   className: nginx
-    #   annotations:
-    #     external-dns.alpha.kubernetes.io/hostname: ---
+    ingress:
+      enabled: true
+      className: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: wo.infra.matyshkinm.evrone.app
     #     # Authentication
     #     nginx.ingress.kubernetes.io/auth-url: ----
     #     nginx.ingress.kubernetes.io/auth-signin: ---
-    #   tls:
-    #     - hosts:
-    #       - ----
-    #       secretName: ----
-    #   hosts:
-    #   - host: ---
-    #     paths:
-    #       - path: /
-    #         pathType: ImplementationSpecific
+      tls:
+        - hosts:
+          - wo.infra.matyshkinm.evrone.app
+          secretName: matyshkin-com-wildcard-tls
+      hosts:
+      - host: wo.infra.matyshkinm.evrone.app
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
     # tolerations:
     #   - key: environment
     #     operator: Equal
