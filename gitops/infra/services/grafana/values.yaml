@@ -11,20 +11,19 @@ tolerations:
 persistence:
   enabled: false
 
+
 ingress:
-  enabled: true
-  className: nginx
-  annotations:
+  enabled: false
+  annotations: 
     cert-manager.io/cluster-issuer: letsencrypt-prod
+  path: /
+  pathType: Prefix
+  hosts:
+      - grafana.infra.matyshkinm.evrone.app
   tls:
     - hosts:
       - grafana.infra.matyshkinm.evrone.app
       secretName: matyshkin-com-grafana-tls
-  hosts:
-  - host: grafana.infra.matyshkinm.evrone.app
-    paths:
-      - path: /
-        pathType: ImplementationSpecific
 
 datasources:
   datasources.yaml:
