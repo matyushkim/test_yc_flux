@@ -12,9 +12,9 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: cert-manager
-  valuesFrom:
-    - kind: ConfigMap
-      name: cert-manager-values
+  # valuesFrom:
+  #   - kind: ConfigMap
+  #     name: cert-manager-values
   install:
     remediation:
       retries: 5
