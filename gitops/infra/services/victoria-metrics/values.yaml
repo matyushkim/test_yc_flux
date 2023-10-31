@@ -14,3 +14,8 @@ server:
   #     operator: Equal
   #     value: infra
   #     effect: NoSchedule
+
+ingress:
+  enabled: true
+  remote_write:
+  - url: http://mimir.infra.matyshkinm.evrone.app/api/v1/push

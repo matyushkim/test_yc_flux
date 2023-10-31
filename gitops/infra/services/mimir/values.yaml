@@ -1,0 +1,31 @@
+nginx:
+  ingress:
+    enabled: true
+    annotations: 
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    path: /
+    pathType: Prefix
+    hosts:
+        - mimir.infra.matyshkinm.evrone.app
+    tls: 
+    -   secretName: matyshkin-com-mimir-tls
+        hosts:
+        - mimir.infra.matyshkinm.evrone.app
+
+minio:
+  enabled: false
+
+global:
+  extraEnvFrom:
+    - secretRef:
+        name: aws-credentials
+
+mimir: 
+   blocks_storage:
+      backend: s3
+      s3:
+        bucket_name: evronelabs-victoriametrics-store
+        endpoint: storage.yandexcloud.net
+        region: "ru-central1"
