@@ -14,9 +14,6 @@
 #         hosts:
 #         - mimir.infra.matyshkinm.evrone.app
 
-minio:
-  enabled: false
-
 # alertmanager:
 #   enabled: false
 
@@ -24,22 +21,43 @@ global:
   extraEnvFrom:
     - secretRef:
         name: aws-credentials
+  podAnnotations:
+    bucketSecretVersion: "0"
 
-mimir: 
-  config: |
-    alertmanager_storage:
-    backend: s3
-    s3:
+minio:
+  enabled: false
+
+mimir:
+  structuredConfig:
+    admin_client:
+      storage:
+        s3:
       endpoint   : "storage.yandexcloud.net"
       bucket_name: "evronelabs-victoriametrics-store"
-      region     : "ru-central1"
+    alertmanager_storage:
+      s3:
+      endpoint   : "storage.yandexcloud.net"
+      bucket_name: "evronelabs-victoriametrics-store"
+    blocks_storage:
+      backend: s3
+      s3:
+      endpoint   : "storage.yandexcloud.net"
+      bucket_name: "evronelabs-victoriametrics-store"
+    ruler_storage:
+      s3:
+      endpoint   : "storage.yandexcloud.net"
+      bucket_name: "evronelabs-victoriametrics-store"
 
 
+    # usage_stats:
+    #     installation_mode: helm
 
+    #   activity_tracker:
+    #     filepath: /active-query-tracker/activity.log
 
-  #  blocks_storage:
-  #     backend: s3
-  #     s3:
-  #       bucket_name: evronelabs-victoriametrics-store
-  #       endpoint: storage.yandexcloud.net
-  #       region: "ru-central1"
+    # alertmanager_storage:
+    # backend: s3
+    # s3:
+    #   endpoint   : "storage.yandexcloud.net"
+    #   bucket_name: "evronelabs-victoriametrics-store"
+    #   region     : "ru-central1"
