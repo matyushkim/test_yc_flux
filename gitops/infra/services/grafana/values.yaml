@@ -40,7 +40,7 @@ datasources:
       - name: Victoria-metrics
         type: victoria-metrics
         access: proxy
-        url: http://victoria-metrics-victoria-metrics-cluster-vmstorage:8482
+        url: http://victoria-metrics-victoria-metrics-cluster-vmstorage:8480
         jsonData:
           maxLines: 1000
 dashboards:
