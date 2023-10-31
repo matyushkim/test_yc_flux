@@ -14,8 +14,32 @@
 #         hosts:
 #         - mimir.infra.matyshkinm.evrone.app
 
+alertmanager:
+  enabled: false
+ingester:
+  zoneAwareReplication:
+    enabled: false
+store_gateway:
+  zoneAwareReplication:
+    enabled: false
+rollout_operator:
+  enabled: false
+
 # alertmanager:
-#   enabled: false
+#   zoneAwareReplication:
+#     topologyKey: "kubernetes.io/hostname" # Triggers creating anti-affinity rules
+#     zones:
+#       - name: zone-a
+#         nodeSelector:
+#           topology.kubernetes.io/zone: us-central1-a
+#       - name: zone-b
+#         nodeSelector:
+#           topology.kubernetes.io/zone: us-central1-b
+#       - name: zone-c
+#         nodeSelector:
+#           topology.kubernetes.io/zone: us-central1-c
+
+
 
 global:
   extraEnvFrom:
