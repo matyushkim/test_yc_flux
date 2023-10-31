@@ -32,10 +32,8 @@ module "kube" {
       nat           = false
       ipv4          = true
       ipv6          = false
-      auto_scale = {
-        min     = 1
-        max     = 2
-        initial = 1
+      fixed_scale = {
+        size = 2
       }
       node_labels = {
         role        = "worker-01"
