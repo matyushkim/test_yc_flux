@@ -6,7 +6,7 @@ resources:
   - repository.yaml
   - release.yaml
 configMapGenerator:
-  - name: loki-values
+  - name: mimir-values
     files:
       - values.yaml=values.yaml
 configurations:
