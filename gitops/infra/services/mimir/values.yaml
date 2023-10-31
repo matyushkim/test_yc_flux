@@ -15,10 +15,10 @@
 #         - mimir.infra.matyshkinm.evrone.app
 
 minio:
-  enabled: true
-
-alertmanager:
   enabled: false
+
+# alertmanager:
+#   enabled: false
 
 global:
   extraEnvFrom:
@@ -26,9 +26,19 @@ global:
         name: aws-credentials
 
 mimir: 
-   blocks_storage:
-      backend: s3
-      s3:
-        bucket_name: evronelabs-victoriametrics-store
-        endpoint: storage.yandexcloud.net
-        region: "ru-central1"
+  alertmanager_storage:
+  backend: s3
+  s3:
+    endpoint   : "storage.yandexcloud.net"
+    bucket_name: "evronelabs-victoriametrics-store"
+    region     : "ru-central1"
+
+
+
+
+  #  blocks_storage:
+  #     backend: s3
+  #     s3:
+  #       bucket_name: evronelabs-victoriametrics-store
+  #       endpoint: storage.yandexcloud.net
+  #       region: "ru-central1"
