@@ -14,8 +14,8 @@
 #         hosts:
 #         - mimir.infra.matyshkinm.evrone.app
 
-minio:
-  enabled: false
+# minio:
+#   enabled: false
 
 global:
   extraEnvFrom:
