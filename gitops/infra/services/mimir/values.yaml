@@ -26,12 +26,13 @@ global:
         name: aws-credentials
 
 mimir: 
-  alertmanager_storage:
-  backend: s3
-  s3:
-    endpoint   : "storage.yandexcloud.net"
-    bucket_name: "evronelabs-victoriametrics-store"
-    region     : "ru-central1"
+  config: |
+    alertmanager_storage:
+    backend: s3
+    s3:
+      endpoint   : "storage.yandexcloud.net"
+      bucket_name: "evronelabs-victoriametrics-store"
+      region     : "ru-central1"
 
 
 
