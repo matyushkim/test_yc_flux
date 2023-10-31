@@ -38,9 +38,9 @@ datasources:
         jsonData:
           maxLines: 1000
       - name: Victoria-metrics
-        type: victoria-metrics
+        type: prometheus
         access: proxy
-        url: http://victoria-metrics-victoria-metrics-cluster-vmstorage:8480
+        url: http://victoria-metrics-victoria-metrics-cluster-vmselect.victoria-metrics:8481
         jsonData:
           maxLines: 1000
 dashboards:
