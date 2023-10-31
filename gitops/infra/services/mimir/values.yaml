@@ -17,6 +17,9 @@
 minio:
   enabled: true
 
+alertmanager:
+  enabled: false
+
 global:
   extraEnvFrom:
     - secretRef:
