@@ -232,8 +232,8 @@ global:
   podAnnotations:
     bucketSecretVersion: "0"
 
-minio:
-  enabled: false
+# minio:
+#   enabled: false
 
 mimir:
   structuredConfig:
