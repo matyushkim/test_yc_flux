@@ -15,7 +15,9 @@ server:
   #     value: infra
   #     effect: NoSchedule
 
+remote_write:
+  - url: http://mimir.infra.matyshkinm.evrone.app/api/v1/push
+
 ingress:
   enabled: true
-  remote_write:
-  - url: http://mimir.infra.matyshkinm.evrone.app/api/v1/push
+  
