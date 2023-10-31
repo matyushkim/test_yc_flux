@@ -58,19 +58,16 @@ mimir:
       storage:
         s3:
       endpoint   : "storage.yandexcloud.net"
-      bucket_name: "evronelabs-victoriametrics-store"
+      region     : "ru-central1"
     alertmanager_storage:
       s3:
-      endpoint   : "storage.yandexcloud.net"
       bucket_name: "evronelabs-victoriametrics-store"
     blocks_storage:
       backend: s3
       s3:
-      endpoint   : "storage.yandexcloud.net"
       bucket_name: "evronelabs-victoriametrics-store"
     ruler_storage:
       s3:
-      endpoint   : "storage.yandexcloud.net"
       bucket_name: "evronelabs-victoriametrics-store"
 
 
