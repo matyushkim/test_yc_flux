@@ -40,7 +40,7 @@ datasources:
       - name: Victoria-metrics
         type: prometheus
         access: proxy
-        url: http://victoria-metrics-victoria-metrics-cluster-vmselect.victoria-metrics:8481
+        url: http://victoria-metrics-victoria-metrics-single-server.victoria-metrics:8428
         jsonData:
           maxLines: 1000
 dashboards:
