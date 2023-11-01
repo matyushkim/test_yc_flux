@@ -17,7 +17,8 @@ prometheus:
             bucket      : "evronelabs-prometheus-store"
             region      : "ru-central1"
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
-            # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k"
+            # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
+            
 
 grafana:
   enabled: false
