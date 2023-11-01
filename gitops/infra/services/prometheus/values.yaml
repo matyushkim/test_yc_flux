@@ -5,7 +5,7 @@
 prometheus:
   prometheusSpec:
     thanos:
-      blockSize: 2h
+      blockSize: 2
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         # existingSecret:
@@ -16,6 +16,7 @@ prometheus:
             endpoint    : "storage.yandexcloud.net"
             bucket      : "evronelabs-prometheus-store"
             region      : "ru-central1"
+            aws_sdk_auth: true
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
             # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
 
