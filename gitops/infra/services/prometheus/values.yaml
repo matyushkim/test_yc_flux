@@ -7,7 +7,7 @@ prometheus:
     thanos:
       objectStorageConfig:
         secret:
-          type: s3
+          type: S3
           config:
             endpoint    : "storage.yandexcloud.net"
             bucket      : "evronelabs-prometheus-store"
