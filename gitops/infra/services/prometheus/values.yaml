@@ -6,16 +6,18 @@ prometheus:
   prometheusSpec:
     thanos:
       blockSize: 1m
-      image: quay.io/thanos/thanos:v0.28.1
+      # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
-        existingSecret:
-          name:  aws-credentials
+        # existingSecret:
+        #   name:  aws-credentials
         secret:
           type: S3
           config:
             endpoint    : "storage.yandexcloud.net"
             bucket      : "evronelabs-prometheus-store"
             region      : "ru-central1"
+            access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
+            secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k"
 
 grafana:
   enabled: false
