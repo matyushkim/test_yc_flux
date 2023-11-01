@@ -5,7 +5,7 @@
 prometheus:
   prometheusSpec:
     thanos:
-      blockSize: 1m
+      blockSize: 2h
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         # existingSecret:
@@ -18,7 +18,7 @@ prometheus:
             region      : "ru-central1"
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
             # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
-            
+
 
 grafana:
   enabled: false
