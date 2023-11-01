@@ -12,6 +12,9 @@ prometheus:
           bucketnames : "evronelabs-prometheus-store"
           region      : "ru-central1"
 
+grafana:
+  enabled: false
+
 
 
 
