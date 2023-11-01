@@ -11,6 +11,11 @@ prometheus:
           endpoint    : "storage.yandexcloud.net"
           bucketnames : "evronelabs-prometheus-store"
           region      : "ru-central1"
+    tolerations:
+      - key: environment
+        operator: Equal
+        value: infra
+        effect: NoSchedule
 
 grafana:
   enabled: false
@@ -33,32 +38,32 @@ grafana:
 #         operator: Equal
 #         value: infra
 #         effect: NoSchedule
-alertmanager:
-  alertmanagerSpec:
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
-prometheusOperator:
-  tolerations:
-    - key: environment
-      operator: Equal
-      value: infra
-      effect: NoSchedule
-  admissionWebhooks:
-    patch:
-      tolerations:
-        - key: environment
-          operator: Equal
-          value: infra
-          effect: NoSchedule
-thanosRuler:
-  thanosRulerSpec:
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
+# alertmanager:
+#   alertmanagerSpec:
+#     tolerations:
+#       - key: environment
+#         operator: Equal
+#         value: infra
+#         effect: NoSchedule
+# prometheusOperator:
+#   tolerations:
+#     - key: environment
+#       operator: Equal
+#       value: infra
+#       effect: NoSchedule
+#   admissionWebhooks:
+#     patch:
+#       tolerations:
+#         - key: environment
+#           operator: Equal
+#           value: infra
+#           effect: NoSchedule
+# thanosRuler:
+#   thanosRulerSpec:
+#     tolerations:
+#       - key: environment
+#         operator: Equal
+#         value: infra
+#         effect: NoSchedule
 # grafana:
 #   enabled: false
