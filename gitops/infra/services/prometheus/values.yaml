@@ -5,6 +5,7 @@
 prometheus:
   prometheusSpec:
     thanos:
+      blockSize: 1m
       image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         existingSecret:
