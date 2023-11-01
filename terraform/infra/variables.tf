@@ -95,7 +95,7 @@ variable "buckets" {
     #   acl  = "public-read"
     # },
     {
-      name = "evronelabs-victoriametrics-store",
+      name = "evronelabs-prometheus-store",
       acl  = "private"
     },
     {

@@ -18,7 +18,7 @@ resource "kubernetes_secret" "aws_credentials" {
 resource "kubernetes_secret" "mimir_credentials" {
   metadata {
     name      = "aws-credentials"
-    namespace = "mimir"
+    namespace = "prometheus"
   }
   data = {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id

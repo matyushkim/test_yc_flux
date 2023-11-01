@@ -1,0 +1,30 @@
+apiVersion: kyverno.io/v1
+kind: Policy
+metadata:
+  name: add-tolerations
+  annotations:
+    policies.kyverno.io/title: Add Tolerations
+    policies.kyverno.io/category: Other
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/subject: Deployment, StatefulSet
+    policies.kyverno.io/description: >- 
+      Pod tolerations are used to schedule on Nodes which have
+      a matching taint.
+spec:
+  rules:
+  - name: service-toleration
+    match:
+      any:
+      - resources:
+          kinds:
+          - Deployment
+          - StatefulSet
+    mutate:
+      patchesJson6902: |-
+        - op: add
+          path: "/spec/template/spec/tolerations/-"
+          value:
+            key: environment
+            operator: Equal
+            value: infra
+            effect: NoSchedule
