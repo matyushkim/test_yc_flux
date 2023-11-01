@@ -40,7 +40,7 @@ compactor:
       memory: 128Mi
 
 distributor:
-  replicas: 2
+  replicas: 1
   resources:
     limits:
       memory: 128Mi
@@ -77,9 +77,8 @@ ingester:
                 values:
                   - ingester
           topologyKey: 'kubernetes.io/hostname'
-
   zoneAwareReplication:
-    topologyKey: 'kubernetes.io/hostname'
+        enabled: false
 
 admin-cache:
   enabled: false
