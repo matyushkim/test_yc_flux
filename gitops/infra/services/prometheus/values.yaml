@@ -3,23 +3,24 @@
 #     - name:  aws-credentials
 
 prometheus:
-  extraSecret:
-    name: aws-credentials
+  # extraSecret:
+  #   name: aws-credentials
   prometheusSpec:
     thanos:
       blockSize: 2m
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
-        # existingSecret:
-        #   name:  aws-credentials
-        secret:
-          type: S3
-          config:
-            endpoint    : "storage.yandexcloud.net"
-            bucket      : "evronelabs-prometheus-store"
-            region      : "ru-central1"
-            aws_sdk_auth: true
-            signature_version2: true
+        existingSecret:
+          name: thanos
+          key: secret
+        # secret:
+        #   type: S3
+        #   config:
+        #     endpoint    : "storage.yandexcloud.net"
+        #     bucket      : "evronelabs-prometheus-store"
+        #     region      : "ru-central1"
+        #     aws_sdk_auth: true
+        #     signature_version2: true
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
             # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
 
