@@ -197,8 +197,8 @@ gateway:
       memory: 512Mi
 
 
-alertmanager:
-  enabled: true
+# alertmanager:
+#   enabled: true
 # ingester:
 #   zoneAwareReplication:
 #     enabled: false

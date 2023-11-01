@@ -5,5 +5,5 @@ resources:
   - ./cert-manager-items
   - ./loki
   - ./grafana
-  - ./victoria-metrics
+  # - ./victoria-metrics
   # - ./mimir
