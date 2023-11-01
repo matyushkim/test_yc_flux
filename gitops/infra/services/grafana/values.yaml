@@ -37,10 +37,10 @@ datasources:
         url: http://loki.loki:3100
         jsonData:
           maxLines: 1000
-      - name: Victoria-metrics
+      - name: Prometheus
         type: prometheus
         access: proxy
-        url: http://victoria-metrics-victoria-metrics-single-server.victoria-metrics:8428
+        url: http://prometheus-kube-prometheus-prometheus.prometheus:9090
         jsonData:
           maxLines: 1000
 dashboards:
