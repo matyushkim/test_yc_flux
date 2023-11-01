@@ -1,11 +1,13 @@
-global:
-  imagePullSecrets:
-    - name:  aws-credentials
+# global:
+#   imagePullSecrets:
+#     - name:  aws-credentials
 
 prometheus:
   prometheusSpec:
     thanos:
       objectStorageConfig:
+      existingSecret:
+        name:  aws-credentials
         secret:
           type: S3
           config:
