@@ -166,4 +166,4 @@ store_gateway:
                   - store-gateway
           topologyKey: 'kubernetes.io/hostname'
   zoneAwareReplication:
-    topologyKey: 'kubernetes.io/hostname'
+        enabled: false
