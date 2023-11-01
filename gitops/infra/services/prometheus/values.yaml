@@ -11,7 +11,7 @@ prometheus:
           type: s3
           config:
             endpoint    : "storage.yandexcloud.net"
-            bucketnames : "evronelabs-prometheus-store"
+            bucket : "evronelabs-prometheus-store"
             region      : "ru-central1"
 
 grafana:
