@@ -11,11 +11,6 @@ prometheus:
           endpoint    : "storage.yandexcloud.net"
           bucketnames : "evronelabs-prometheus-store"
           region      : "ru-central1"
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
 
 grafana:
   enabled: false
