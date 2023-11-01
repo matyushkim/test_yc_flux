@@ -5,12 +5,13 @@ global:
 prometheus:
   prometheusSpec:
     thanos:
-      secret:
-        type: s3
-        config:
-          endpoint    : "storage.yandexcloud.net"
-          bucketnames : "evronelabs-prometheus-store"
-          region      : "ru-central1"
+      objectStorageConfig:
+        secret:
+          type: s3
+          config:
+            endpoint    : "storage.yandexcloud.net"
+            bucketnames : "evronelabs-prometheus-store"
+            region      : "ru-central1"
 
 grafana:
   enabled: false
