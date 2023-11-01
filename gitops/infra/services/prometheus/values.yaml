@@ -6,8 +6,8 @@ prometheus:
   prometheusSpec:
     thanos:
       objectStorageConfig:
-      existingSecret:
-        name:  aws-credentials
+        existingSecret:
+          name:  aws-credentials
         secret:
           type: S3
           config:
