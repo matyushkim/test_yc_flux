@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: thanos
+spec:
+  interval: 1h0m0s
+  chart:
+    spec:
+      chart: thanos-operator
+      version: 0.3.7
+      sourceRef:
+        kind: HelmRepository
+        name: thanos
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  valuesFrom:
+    - kind: ConfigMap
+      name: thanos-values
