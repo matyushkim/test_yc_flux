@@ -6,7 +6,6 @@ prometheus:
   prometheusSpec:
     thanos:
       objectStorageConfig:
-        existingSecret: {}
         secret:
           type: s3
           config:
