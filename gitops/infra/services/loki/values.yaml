@@ -7,8 +7,7 @@ promtail:
     additionalLabels:
       app.kubernetes.io/part-of: kube-prometheus-
 loki:
-
-  annotations: 
+  podAnnotations:
     linkerd.io/inject: enabled
 
   extraEnvFrom:
