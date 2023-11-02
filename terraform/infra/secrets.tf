@@ -35,7 +35,7 @@ resource "kubernetes_secret" "prometheus" {
 
 resource "kubernetes_namespace" "postgres" {
   metadata {
-    name = postgres
+    name = "postgres"
   }
 }
 
