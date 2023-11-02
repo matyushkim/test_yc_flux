@@ -3,12 +3,13 @@ provider "kubernetes" {
   cluster_ca_certificate = module.kube.cluster_ca_certificate
   token                  = var.iam_token
 }
+
 resource "kubernetes_namespace" "loki" {
   metadata {
     name = "loki"
   }
 }
-resource "kubernetes_secret" "aws_credentials" {
+resource "kubernetes_secret" "loki" {
   metadata {
     name = kubernetes_namespace.loki.loki
   }
@@ -38,7 +39,6 @@ resource "kubernetes_namespace" "postgres" {
     name = "postgres"
   }
 }
-
 resource "kubernetes_secret" "postgres" {
   metadata {
     name = kubernetes_namespace.postgres.postgres
