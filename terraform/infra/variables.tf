@@ -90,10 +90,10 @@ variable "buckets" {
     acl  = string
   }))
   default = [
-    # {
-    #   name = "evronelabs-webapplication-store",
-    #   acl  = "public-read"
-    # },
+    {
+      name = "evronelabs-postgresql-store",
+      acl  = "public-read"
+    },
     {
       name = "evronelabs-prometheus-store",
       acl  = "private"
