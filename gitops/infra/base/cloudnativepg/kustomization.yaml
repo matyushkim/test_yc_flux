@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: cloudnative-pg
 resources:
   - namespace.yaml
-  - values.yaml
+  - repository.yaml
   - release.yaml
 configMapGenerator:
   - name: cloudnative-pg-values 

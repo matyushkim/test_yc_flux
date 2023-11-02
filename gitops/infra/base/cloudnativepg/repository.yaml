@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: cloudnative-pg
+spec:
+  interval: 5h
+  timeout: 5m
+  url: https://cloudnative-pg.io/charts/
