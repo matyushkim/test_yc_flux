@@ -4,3 +4,4 @@ resources:
    - ./weave-ops
    - ./cert-manager
    # - ./thanos
+   - ./linkerd-crd
