@@ -10,4 +10,4 @@ resources:
   # - ./mimir
   - ./linkerd
   - ./linkerd-viz
-  # - ./posgreasql
+  - ./posgreasql
