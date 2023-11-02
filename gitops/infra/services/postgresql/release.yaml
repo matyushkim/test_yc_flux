@@ -5,9 +5,9 @@ metadata:
 spec:
   instances: 2
   primaryUpdateStrategy: unsupervised
-  # storage:
-  #   storageClass: local
-  #   size: 1Gi
+  storage:
+    storageClass: local
+    size: 1Gi
   bootstrap:
     initdb: # Развертывание нового кластера.
       database: grafana
