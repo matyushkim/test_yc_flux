@@ -22,7 +22,7 @@ module "kube" {
     "yc-k8s-dev" = {
       description   = "Kubernetes nodes group development"
       platform_id   = "standard-v3"
-      node_cores    = 2
+      node_cores    = 4
       node_memory   = 8
       node_gpus     = 0
       core_fraction = 20
