@@ -17,16 +17,16 @@ spec:
   monitoring:
     enablePodMonitor: false
   backup:
-  retentionPolicy: 14
-  barmanObjectStore:
-    destinationPath: "s3://evronelabs-prometheus-store/backups" # Путь к каталогу.
-    endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
-    s3Credentials: # Данные для доступа к bucket’у.
-      accessKeyId:
-        name: s3-creds
-        key: YCAJE4TM_oVlS5edgGF9sSeHv
-      secretAccessKey:
-        name: s3-creds
-        key: YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k
-    wal:
-      compression: gzip # Включено сжатие WAL.
+    retentionPolicy: 14
+    barmanObjectStore:
+      destinationPath: "s3://evronelabs-prometheus-store/backups" # Путь к каталогу.
+      endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
+      s3Credentials: # Данные для доступа к bucket’у.
+        accessKeyId:
+          name: s3-creds
+          key: YCAJE4TM_oVlS5edgGF9sSeHv
+        secretAccessKey:
+          name: s3-creds
+          key: YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k
+      wal:
+        compression: gzip # Включено сжатие WAL.
