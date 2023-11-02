@@ -1,0 +1,23 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-viz
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: linkerd-viz
+      version: 30.12.3
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd-viz
+  valuesFrom:
+    - kind: ConfigMap
+      name: linkerd-viz-values
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
