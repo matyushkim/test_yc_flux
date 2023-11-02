@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: postgresql # Название кластера.
 spec:
-  instances: 2
+  instances: 3
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: local
