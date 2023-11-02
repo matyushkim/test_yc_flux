@@ -19,7 +19,7 @@ spec:
   backup:
     retentionPolicy: "30d"
     barmanObjectStore:
-      destinationPath: "s3://evronelabs-prometheus-store/backups" # Путь к каталогу.
+      destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
       endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
       s3Credentials: # Данные для доступа к bucket’у.
         accessKeyId:
