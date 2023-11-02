@@ -12,8 +12,8 @@ spec:
     initdb: # Развертывание нового кластера.
       database: grafana
       owner: grafana
-      # secret:
-      #   name: grafana-pg-user
+      secret:
+        name: grafana-pg-user
   monitoring:
     enablePodMonitor: false
   backup:
