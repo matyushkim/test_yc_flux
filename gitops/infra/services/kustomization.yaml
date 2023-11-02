@@ -9,4 +9,4 @@ resources:
   # - ./victoria-metrics
   # - ./mimir
   - ./linkerd
-  - ./linkerd-viz
+  # - ./linkerd-viz
