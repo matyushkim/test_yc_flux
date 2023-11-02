@@ -14,5 +14,5 @@ spec:
       owner: grafana
       secret:
         name: grafana-pg-user
-    monitoring:
+  monitoring:
     enablePodMonitor: false
