@@ -1,21 +1,22 @@
-# Example of PostgreSQL cluster
-apiVersion: postgresql.cnpg.io/v1
-kind: Cluster
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
-  name: cluster-example
+  name: cloudnative-pg
 spec:
-  instances: 1
-
-  # Example of rolling update strategy:
-  # - unsupervised: automated update of the primary once all
-  #                 replicas have been upgraded (default)
-  # - supervised: requires manual supervision to perform
-  #               the switchover of the primary
-  primaryUpdateStrategy: unsupervised
-
-  # Require 1Gi of space
-  storage:
-    size: 1Gi
-  imageName: ghcr.io/cloudnative-pg/postgresql:13.6
-  monitoring:
-    enablePodMonitor: false
+  interval: 10m
+  chart:
+    spec:
+      chart: cloudnative-pg
+      version: 0.19.0
+      sourceRef:
+        kind: HelmRepository
+        name: cloudnative-pg
+  valuesFrom:
+    - kind: ConfigMap
+      name: cloudnative-pg-values
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
