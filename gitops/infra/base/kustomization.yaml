@@ -4,5 +4,5 @@ resources:
    - ./weave-ops
    - ./cert-manager
    # - ./thanos
-   - ./linkerd-crd
+   # - ./linkerd-crd
    # - ./cloudnativepg

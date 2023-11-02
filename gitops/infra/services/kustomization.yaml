@@ -8,5 +8,5 @@ resources:
   - ./prometheus
   # - ./victoria-metrics
   # - ./mimir
-  - ./linkerd
-  - ./linkerd-viz
+  # - ./linkerd
+  # - ./linkerd-viz
