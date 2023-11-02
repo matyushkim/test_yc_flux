@@ -8,6 +8,9 @@ promtail:
       app.kubernetes.io/part-of: kube-prometheus-
 loki:
 
+  serviceAnnotations:
+      linkerd.io/inject: enabled
+
   extraEnvFrom:
     - secretRef:
         name: aws-credentials

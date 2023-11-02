@@ -61,3 +61,7 @@ dashboardProviders:
         editable: true
         options:
           path: /var/lib/grafana/dashboards/default
+
+service:
+  annotations:
+    linkerd.io/inject: enabled
