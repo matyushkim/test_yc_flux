@@ -8,8 +8,8 @@ promtail:
       app.kubernetes.io/part-of: kube-prometheus-
 loki:
 
-    annotations: 
-      linkerd.io/inject: enabled
+  annotations: 
+    linkerd.io/inject: enabled
 
   extraEnvFrom:
     - secretRef:
