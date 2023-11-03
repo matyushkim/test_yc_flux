@@ -11,7 +11,8 @@ resource "kubernetes_namespace" "loki" {
 }
 resource "kubernetes_secret" "loki" {
   metadata {
-    name = kubernetes_namespace.loki
+    name      = "loki"
+    namespace = kubernetes_namespace.loki.metadata.name
   }
   data = {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
@@ -26,7 +27,8 @@ resource "kubernetes_namespace" "prometheus" {
 }
 resource "kubernetes_secret" "prometheus" {
   metadata {
-    name = kubernetes_namespace.prometheus
+    name      = "prometheus"
+    namespace = kubernetes_namespace.prometheus.metadata.name
   }
   data = {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
@@ -41,7 +43,8 @@ resource "kubernetes_namespace" "postgres" {
 }
 resource "kubernetes_secret" "postgres" {
   metadata {
-    name = kubernetes_namespace.postgres
+    name      = "postgres"
+    namespace = kubernetes_namespace.postgres.metadata.name
   }
   data = {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
