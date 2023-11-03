@@ -2,9 +2,12 @@ module "kube" {
   source     = "github.com/terraform-yc-modules/terraform-yc-kubernetes"
   network_id = module.yc-vpc.vpc_id
 
-
-  master_locations = length(var.master_locations) > 1 ? [] : var.master_locations
-
+  master_locations = [
+    {
+      zone      = "ru-central1-a"
+      subnet_id = "e9bjddqmcqh22k68c3ji"
+    }
+  ]
 
   master_maintenance_windows = [
     {
