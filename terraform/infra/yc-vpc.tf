@@ -9,4 +9,3 @@ module "yc-vpc" {
     }
   ]
 }
-

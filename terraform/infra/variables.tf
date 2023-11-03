@@ -129,12 +129,12 @@ variable "master_locations" {
     zone      = string
     subnet_id = string
   }))
-  default = [
-    {
-      zone      = s.zone,
-      subnet_id = s.subnet_id
-    }
-  ]
+  # default = [
+  #   {
+  #     zone      = s.zone,
+  #     subnet_id = s.subnet_id
+  #   }
+  # ]
   validation {
     condition     = contains([1, 3], length(var.master_locations))
     error_message = "Master locations list should have only one location for Zonal cluster and three locations for Regional!"
