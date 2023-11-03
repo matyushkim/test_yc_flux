@@ -37,6 +37,7 @@ variable "github_org" {
   default = "matyushkim"
 }
 
+
 variable "github_repository" {
   type    = string
   default = "test_yc_argo"
