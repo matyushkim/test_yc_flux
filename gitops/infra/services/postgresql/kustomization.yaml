@@ -5,6 +5,7 @@ resources:
   - namespace.yaml
   - release.yaml
   - secret.yaml
+  - backup.yaml
 configMapGenerator:
   - name: postgresql-values 
     files:
