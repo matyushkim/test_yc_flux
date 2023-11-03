@@ -22,15 +22,24 @@ terraform {
   }
 
   required_providers {
-    # kubernetes = {
-    #   source  = "hashicorp/kubernetes"
-    #   version = ">=2.23.0"
-    # }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">=2.23.0"
+    }
     flux = {
       source = "fluxcd/flux"
     }
     yandex = {
-      source = "yandex-cloud/yandex"
+      source  = "yandex-cloud/yandex"
+      version = "> 0.8"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "2.2.3"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "> 3.3"
     }
     github = {
       source  = "integrations/github"
