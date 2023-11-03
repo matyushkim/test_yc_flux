@@ -12,7 +12,7 @@ loki:
 
   extraEnvFrom:
     - secretRef:
-        name: aws-credentials
+        name: loki-aws
   config:
     server:
       http_server_read_timeout: 600s
