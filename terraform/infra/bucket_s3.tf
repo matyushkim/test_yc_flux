@@ -15,7 +15,6 @@ resource "yandex_storage_bucket" "this" {
   acl    = each.value.acl
 }
 
-
 # вариант создания через count
 # resource "yandex_storage_bucket" "bucket" {
 #   count  = length(var.buckets)
