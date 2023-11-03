@@ -19,6 +19,7 @@ resource "kubernetes_secret" "loki-aws" {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
   }
+  depends_on = [kubernetes_namespace.loki]
 }
 
 resource "kubernetes_namespace" "prometheus" {
@@ -36,6 +37,7 @@ resource "kubernetes_secret" "prometheus-aws" {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
   }
+  depends_on = [kubernetes_namespace.prometheus]
 }
 
 resource "kubernetes_namespace" "postgres" {
@@ -53,4 +55,5 @@ resource "kubernetes_secret" "postgres-aws" {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
   }
+  depends_on = [kubernetes_namespace.postgres]
 }
