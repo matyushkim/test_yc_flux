@@ -111,7 +111,7 @@ jobs:
               })
         
         - name: Terraform 
-          run :  terraform import kubernetes_namespace.loki loki
+          run :  terraform import kubernetes_namespace.prometheus prometheus
 
         # - name: Terraform Apply
         #   # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
