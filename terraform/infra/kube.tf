@@ -5,7 +5,7 @@ module "kube" {
   master_locations = [
     {
       zone      = var.zone,
-      subnet_id = module.yc-vpc.private_subnets.0.id
+      subnet_id = "e9bjddqmcqh22k68c3ji"
     }
   ]
 
