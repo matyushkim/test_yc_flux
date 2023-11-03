@@ -9,9 +9,9 @@ resource "kubernetes_namespace" "loki" {
     name = "loki"
   }
 }
-resource "kubernetes_secret" "loki" {
+resource "kubernetes_secret" "loki-aws" {
   metadata {
-    name      = "loki"
+    name      = "loki-aws"
     namespace = kubernetes_namespace.loki.metadata[0].name
   }
   data = {
@@ -25,9 +25,9 @@ resource "kubernetes_namespace" "prometheus" {
     name = "prometheus"
   }
 }
-resource "kubernetes_secret" "prometheus" {
+resource "kubernetes_secret" "prometheus-aws" {
   metadata {
-    name      = "prometheus"
+    name      = "prometheus-aws"
     namespace = kubernetes_namespace.prometheus.metadata[0].name
   }
   data = {
@@ -41,9 +41,9 @@ resource "kubernetes_namespace" "postgres" {
     name = "postgres"
   }
 }
-resource "kubernetes_secret" "postgres" {
+resource "kubernetes_secret" "postgres-aws" {
   metadata {
-    name      = "postgres"
+    name      = "postgres-aws"
     namespace = kubernetes_namespace.postgres.metadata[0].name
   }
   data = {
