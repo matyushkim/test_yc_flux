@@ -16,6 +16,12 @@
 #   }
 # }
 
+variable "cluster_version" {
+  description = "Kubernetes cluster version"
+  type        = string
+  default     = "1.27"
+}
+
 variable "aws_secret_access_key" {
   type    = string
   default = "secret_key"
