@@ -6,7 +6,8 @@ provider "kubernetes" {
 
 resource "kubernetes_namespace" "loki" {
   metadata {
-    name = "loki"
+    name       = "loki"
+    depends_on = module.kube
   }
 }
 resource "kubernetes_secret" "loki-aws" {
@@ -22,7 +23,9 @@ resource "kubernetes_secret" "loki-aws" {
 
 resource "kubernetes_namespace" "prometheus" {
   metadata {
-    name = "prometheus"
+    name       = "prometheus"
+    depends_on = module.kube
+
   }
 }
 resource "kubernetes_secret" "prometheus-aws" {
@@ -38,7 +41,9 @@ resource "kubernetes_secret" "prometheus-aws" {
 
 resource "kubernetes_namespace" "postgres" {
   metadata {
-    name = "postgres"
+    name       = "postgres"
+    depends_on = module.kube
+
   }
 }
 resource "kubernetes_secret" "postgres-aws" {
