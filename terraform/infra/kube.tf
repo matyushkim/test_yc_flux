@@ -1,6 +1,7 @@
 module "kube" {
-  source     = "github.com/terraform-yc-modules/terraform-yc-kubernetes"
-  network_id = module.yc-vpc.vpc_id
+  source          = "github.com/terraform-yc-modules/terraform-yc-kubernetes"
+  network_id      = module.yc-vpc.vpc_id
+  cluster_version = var.cluster_version
 
   master_locations = [
     for s in module.yc-vpc.private_subnets :
@@ -41,6 +42,7 @@ module "kube" {
         environment = "testing"
       }
     },
+
 
 
     # "yc-k8s-prod" = {
