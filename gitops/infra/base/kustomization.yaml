@@ -6,3 +6,4 @@ resources:
    # - ./thanos
    - ./linkerd-crd
    - ./cloudnativepg
+   - ./trust-manager
