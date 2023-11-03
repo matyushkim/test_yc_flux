@@ -37,6 +37,7 @@ module "kube" {
       }
     },
 
+
     # "yc-k8s-prod" = {
     #   description = "Kubernetes nodes group prod"
     #   auto_scale = {
