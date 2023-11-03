@@ -5,8 +5,8 @@ module "kube" {
   master_locations = [
     for s in module.yc-vpc.private_subnets :
     {
-      zone      = s.zone,
-      subnet_id = s.subnet_id
+      zone      = var.zone,
+      subnet_id = module.yc-vpc.private_subnets[0].id
     }
   ]
 

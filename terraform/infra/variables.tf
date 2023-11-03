@@ -86,6 +86,7 @@ variable "cloud_id" {
 variable "zone" {
   type        = string
   description = "zone"
+  default     = "ru-cenrtal1-a"
 }
 
 ### ПЕРЕМЕННЫЕ ДЛЯ ХРАНИЛИЩА ####
