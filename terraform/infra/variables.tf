@@ -19,7 +19,7 @@
 variable "cluster_version" {
   description = "Kubernetes cluster version"
   type        = string
-  default     = "1.25"
+  default     = "1.27"
 }
 
 variable "aws_secret_access_key" {
@@ -129,12 +129,12 @@ variable "master_locations" {
     zone      = string
     subnet_id = string
   }))
-  default = [
-    {
-      zone      = "ru-central1-a"
-      subnet_id = "e9bjddqmcqh22k68c3ji"
-    }
-  ]
+  # default = [
+  #   {
+  #     zone      = "ru-central1-a"
+  #     subnet_id = "e9bjddqmcqh22k68c3ji"
+  #   }
+  # ]
   validation {
     condition     = contains([1, 3], length(var.master_locations))
     error_message = "Master locations list should have only one location for Zonal cluster and three locations for Regional!"
