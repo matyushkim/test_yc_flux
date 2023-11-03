@@ -2,6 +2,14 @@ module "kube" {
   source     = "github.com/terraform-yc-modules/terraform-yc-kubernetes"
   network_id = module.yc-vpc.vpc_id
 
+  master_locations = [
+    for s in module.yc-vpc.private_subnets :
+    {
+      zone      = s.zone,
+      subnet_id = s.subnet_id
+    }
+  ]
+
   master_maintenance_windows = [
     {
       day        = "monday"
