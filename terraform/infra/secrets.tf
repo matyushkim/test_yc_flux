@@ -25,7 +25,7 @@ resource "kubernetes_namespace" "prometheus" {
   metadata {
     name = "prometheus"
   }
-  depends_on = module.kube
+  depends_on = [module.kube]
 }
 resource "kubernetes_secret" "prometheus-aws" {
   metadata {
@@ -42,7 +42,7 @@ resource "kubernetes_namespace" "postgres" {
   metadata {
     name = "postgres"
   }
-  depends_on = module.kube
+  depends_on = [module.kube]
 }
 resource "kubernetes_secret" "postgres-aws" {
   metadata {
