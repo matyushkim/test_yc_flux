@@ -3,11 +3,11 @@ kind: Kustomization
 resources:
   - ./ingress-controller
   - ./cert-manager-items
-  - ./loki
-  - ./grafana
-  - ./prometheus
+  # - ./loki
+  # - ./grafana
+  # - ./prometheus
   # - ./victoria-metrics
   # - ./mimir
   - ./linkerd
   - ./linkerd-viz
-  - ./postgresql
+  # - ./postgresql
