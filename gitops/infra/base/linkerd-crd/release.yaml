@@ -12,9 +12,9 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: linkerd-crds
-  valuesFrom:
-    - kind: ConfigMap
-      name: linkerd-crds-values
+  # valuesFrom:
+  #   - kind: ConfigMap
+  #     name: linkerd-crds-values
   install:
     remediation:
       retries: 5
