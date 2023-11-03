@@ -110,6 +110,9 @@ jobs:
                 body: output
               })
         
-        - name: Terraform Apply
-          # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-          run : terraform apply -auto-approve
+        - name: Terraform 
+          run :  terraform import kubernetes_namespace.loki loki
+
+        # - name: Terraform Apply
+        #   # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        #   run : terraform apply -auto-approve
