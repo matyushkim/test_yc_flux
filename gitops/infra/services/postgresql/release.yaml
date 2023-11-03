@@ -23,10 +23,10 @@ spec:
       endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
       s3Credentials: # Данные для доступа к bucket’у.
         accessKeyId:
-          name: s3-creds
-          key: YCAJE4TM_oVlS5edgGF9sSeHv
+          name: postgres-aws
+          key: AWS_ACCESS_KEY_ID
         secretAccessKey:
-          name: s3-creds
-          key: YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k
+          name: postgres-aws
+          key: AWS_SECRET_ACCESS_KEY
       wal:
         compression: gzip # Включено сжатие WAL.
