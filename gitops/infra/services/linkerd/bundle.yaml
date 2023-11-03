@@ -5,7 +5,7 @@ metadata:
 spec:
   sources:
   - secret:
-      name: "root-secret"
+      name: "linkerd-secret-bundle"
       key: "ca.crt"
   target:
     configMap:
