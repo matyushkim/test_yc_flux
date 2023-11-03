@@ -116,3 +116,20 @@ variable "buckets" {
   ]
   description = "List of bucket names with acls"
 }
+
+variable "master_locations" {
+  description = <<-EOF
+    List of locations where the cluster will be created. If the list contains only one
+    location, a zonal cluster will be created; if there are three locations, this will create a regional cluster.
+
+    Note: The master locations list may only have ONE or THREE locations.
+  EOF
+  type = list(object({
+    zone      = string
+    subnet_id = string
+  }))
+  validation {
+    condition     = contains([1], length(var.master_locations))
+    error_message = "Master locations list should have only one location for Zonal cluster and three locations for Regional!"
+  }
+}
