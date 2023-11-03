@@ -125,8 +125,8 @@ variable "master_locations" {
     Note: The master locations list may only have ONE or THREE locations.
   EOF
   type = list(object({
-    zone      = "ru-central1-a"
-    subnet_id = "e9bjddqmcqh22k68c3ji"
+    zone      = ru-central1-a
+    subnet_id = e9bjddqmcqh22k68c3ji
   }))
   validation {
     condition     = contains([1], length(var.master_locations))
