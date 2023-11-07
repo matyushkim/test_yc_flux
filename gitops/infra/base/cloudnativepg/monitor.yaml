@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      # Release:  prometheus
+      Release:  "prometheus"
       app.kubernetes.io/name: cloudnative-pg
   podMetricsEndpoints:
     - port: metrics
