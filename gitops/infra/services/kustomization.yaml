@@ -5,7 +5,7 @@ resources:
   - ./cert-manager-items
   - ./loki
   - ./grafana
-  # - ./prometheus
+  - ./prometheus
   # - ./victoria-metrics
   # - ./mimir
   # - ./linkerd-viz
