@@ -10,4 +10,4 @@ resources:
   # - ./mimir
   # - ./linkerd-viz
   - ./postgresql
-  - ./linkerd
+  # - ./linkerd
