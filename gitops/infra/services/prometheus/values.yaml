@@ -46,4 +46,4 @@ grafana:
 
 alertmanager:
   ingress:
-  enabled: false
+    enabled: false
