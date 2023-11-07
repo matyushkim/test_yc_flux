@@ -12,3 +12,4 @@ spec:
       app.kubernetes.io/name: cloudnative-pg
   podMetricsEndpoints:
     - port: metrics
+    
