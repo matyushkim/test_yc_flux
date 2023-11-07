@@ -11,4 +11,4 @@ resources:
   # - ./linkerd-viz
   - ./postgresql
   # - ./linkerd
-  - ./linkerd2
+  # - ./linkerd2
