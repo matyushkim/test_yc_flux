@@ -6,6 +6,7 @@ resources:
   - repository.yaml
   - release.yaml
   - monitor.yaml
+  - prometheusrule.yaml
 configMapGenerator:
   - name: cloudnative-pg-values 
     files:
