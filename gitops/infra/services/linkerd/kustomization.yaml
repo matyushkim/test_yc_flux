@@ -9,9 +9,9 @@ resources:
   # - bundle.yaml
   # - secret-bundle.yaml
   # - secret.yaml
-# configMapGenerator:
-#   - name: linkerd-control-plane-values
-#     files:
-#       - values.yaml=values.yaml
+configMapGenerator:
+  - name: linkerd-control-plane-values
+    files:
+      - values.yaml=values.yaml
 configurations:
   - kustomizeconfig.yaml
