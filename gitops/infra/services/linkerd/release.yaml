@@ -12,9 +12,9 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: linkerd-control-plane
-  valuesFrom:
-    - kind: ConfigMap
-      name: linkerd-control-plane-values
+  # valuesFrom:
+  #   - kind: ConfigMap
+  #     name: linkerd-control-plane-values
   install:
     remediation:
       retries: 5
