@@ -2,9 +2,10 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   labels:
+    Release:  prometheus
     app.kubernetes.io/name: cloudnative-pg
   name: controller-manager-metrics-monitor
-  namespace: system
+  namespace: postgres
 spec:
   selector:
     matchLabels:
