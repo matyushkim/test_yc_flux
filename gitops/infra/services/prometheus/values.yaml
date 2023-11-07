@@ -24,7 +24,7 @@ prometheus:
     probeSelectorNilUsesHelmValues: false
     ruleSelectorNilUsesHelmValues: false
     scrapeConfigSelectorNilUsesHelmValues: false
-    
+
   ingress:
     enabled: true
     annotations: 
@@ -42,4 +42,8 @@ prometheus:
         - prometheus.infra.matyshkinm.evrone.app
 
 grafana:
+  enabled: false
+
+alertmanager:
+  ingress:
   enabled: false
