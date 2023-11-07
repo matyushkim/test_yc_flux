@@ -1,7 +1,7 @@
-# identity:
-#   externalCA: true
-#   issuer:
-#     scheme: kubernetes.io/tls
+identity:
+  externalCA: true
+  issuer:
+    scheme: kubernetes.io/tls
 
 # policyController:
 #   probeNetworks: 
@@ -9,39 +9,39 @@
 
 # clusterNetworks: "0.0.0.0/0"
 
-identityTrustAnchorsPEM: |
-  -----BEGIN CERTIFICATE-----
-  MIIBjDCCATOgAwIBAgIQYv/1g2oV1A9yFpddmij31zAKBggqhkjOPQQDAjAlMSMw
-  IQYDVQQDExpyb290LmxpbmtlcmQuY2x1c3Rlci5sb2NhbDAeFw0yMzExMDIwODAx
-  MzVaFw0zMzEwMzAwODAxMzVaMCUxIzAhBgNVBAMTGnJvb3QubGlua2VyZC5jbHVz
-  dGVyLmxvY2FsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDH7ynEZ8FOsG2S5T
-  uzYWMZjpcUhy716rlQQjWlYi6S1YaqN0wLHchHJ3SdKpjEAgTyrEKxSmpcpC9eiE
-  SvZbm6NFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYD
-  VR0OBBYEFHKsa86+Kex0+bNPuw19WKYKbQHfMAoGCCqGSM49BAMCA0cAMEQCIBUN
-  jbPSSzVphF1cuz1XHznCwsYRrBqjGUm0E8SNDGS8AiAbbm7hMSlVXfRYwgl/1QTA
-  EkrORzMr41om7+jfblM7SA==
-  -----END CERTIFICATE-----
+# identityTrustAnchorsPEM: |
+#   -----BEGIN CERTIFICATE-----
+#   MIIBjDCCATOgAwIBAgIQYv/1g2oV1A9yFpddmij31zAKBggqhkjOPQQDAjAlMSMw
+#   IQYDVQQDExpyb290LmxpbmtlcmQuY2x1c3Rlci5sb2NhbDAeFw0yMzExMDIwODAx
+#   MzVaFw0zMzEwMzAwODAxMzVaMCUxIzAhBgNVBAMTGnJvb3QubGlua2VyZC5jbHVz
+#   dGVyLmxvY2FsMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDH7ynEZ8FOsG2S5T
+#   uzYWMZjpcUhy716rlQQjWlYi6S1YaqN0wLHchHJ3SdKpjEAgTyrEKxSmpcpC9eiE
+#   SvZbm6NFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYD
+#   VR0OBBYEFHKsa86+Kex0+bNPuw19WKYKbQHfMAoGCCqGSM49BAMCA0cAMEQCIBUN
+#   jbPSSzVphF1cuz1XHznCwsYRrBqjGUm0E8SNDGS8AiAbbm7hMSlVXfRYwgl/1QTA
+#   EkrORzMr41om7+jfblM7SA==
+#   -----END CERTIFICATE-----
   
-identity:
-    issuer:
-      tls:
-        crtPEM: |
-          -----BEGIN CERTIFICATE-----
-          MIIBsjCCAVigAwIBAgIQNsXPzt8aiQcPhOuakJ9flDAKBggqhkjOPQQDAjAlMSMw
-          IQYDVQQDExpyb290LmxpbmtlcmQuY2x1c3Rlci5sb2NhbDAeFw0yMzExMDIwODAx
-          NDlaFw0yNDExMDEwODAxNDlaMCkxJzAlBgNVBAMTHmlkZW50aXR5LmxpbmtlcmQu
-          Y2x1c3Rlci5sb2NhbDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKuSW77RUGh4
-          3qmBvP3MREoe42boFZqsSo5FAQCsS7FcgKLSBPLedXLz8gFZZdWFCtYtr3+11SOz
-          vB/uFZOCrcejZjBkMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEA
-          MB0GA1UdDgQWBBROV/C52soXLd2CVQ0/OwO6EIFryTAfBgNVHSMEGDAWgBRyrGvO
-          vinsdPmzT7sNfVimCm0B3zAKBggqhkjOPQQDAgNIADBFAiEAugIi14h2zZ7vkfMI
-          3gb8xZ/GI+X68oDWgdRtP2w096ECICaeHkqoGdgKVVojmbB89Csx5gcVXs5/vEF3
-          6XWXutuA
-          -----END CERTIFICATE-----
+# identity:
+#     issuer:
+#       tls:
+#         crtPEM: |
+#           -----BEGIN CERTIFICATE-----
+#           MIIBsjCCAVigAwIBAgIQNsXPzt8aiQcPhOuakJ9flDAKBggqhkjOPQQDAjAlMSMw
+#           IQYDVQQDExpyb290LmxpbmtlcmQuY2x1c3Rlci5sb2NhbDAeFw0yMzExMDIwODAx
+#           NDlaFw0yNDExMDEwODAxNDlaMCkxJzAlBgNVBAMTHmlkZW50aXR5LmxpbmtlcmQu
+#           Y2x1c3Rlci5sb2NhbDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKuSW77RUGh4
+#           3qmBvP3MREoe42boFZqsSo5FAQCsS7FcgKLSBPLedXLz8gFZZdWFCtYtr3+11SOz
+#           vB/uFZOCrcejZjBkMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEA
+#           MB0GA1UdDgQWBBROV/C52soXLd2CVQ0/OwO6EIFryTAfBgNVHSMEGDAWgBRyrGvO
+#           vinsdPmzT7sNfVimCm0B3zAKBggqhkjOPQQDAgNIADBFAiEAugIi14h2zZ7vkfMI
+#           3gb8xZ/GI+X68oDWgdRtP2w096ECICaeHkqoGdgKVVojmbB89Csx5gcVXs5/vEF3
+#           6XWXutuA
+#           -----END CERTIFICATE-----
 
-        keyPEM: |
-          -----BEGIN EC PRIVATE KEY-----
-          MHcCAQEEIH4O8GAun8caozjHsuyPVsOnyja3NEfaYxWDfu4SxxdFoAoGCCqGSM49
-          AwEHoUQDQgAEq5JbvtFQaHjeqYG8/cxESh7jZugVmqxKjkUBAKxLsVyAotIE8t51
-          cvPyAVll1YUK1i2vf7XVI7O8H+4Vk4Ktxw==
-          -----END EC PRIVATE KEY-----
+#         keyPEM: |
+#           -----BEGIN EC PRIVATE KEY-----
+#           MHcCAQEEIH4O8GAun8caozjHsuyPVsOnyja3NEfaYxWDfu4SxxdFoAoGCCqGSM49
+#           AwEHoUQDQgAEq5JbvtFQaHjeqYG8/cxESh7jZugVmqxKjkUBAKxLsVyAotIE8t51
+#           cvPyAVll1YUK1i2vf7XVI7O8H+4Vk4Ktxw==
+#           -----END EC PRIVATE KEY-----
