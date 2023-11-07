@@ -1,7 +1,3 @@
-# global:
-#   imagePullSecrets:
-#     - name:  aws-credentials
-
 prometheus:
   # extraSecret:
   #   name: aws-credentials
@@ -23,53 +19,11 @@ prometheus:
         #     signature_version2: true
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
             # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
-
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
+    probeSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    scrapeConfigSelectorNilUsesHelmValues: false
 
 grafana:
   enabled: false
-
-
-# ---
-# prometheus:
-#   prometheusSpec:
-#     thanos:
-#       # ObjectStorageConfig configures object storage in Thanos.
-#       objectStorageConfig:
-#         # use existing secret, if configured, objectStorageConfig.secret will not be used
-#         existingSecret:
-#           name: thanos-secret
-#           key: object-store.yaml
-#     tolerations:
-#       - key: environment
-#         operator: Equal
-#         value: infra
-#         effect: NoSchedule
-# alertmanager:
-#   alertmanagerSpec:
-#     tolerations:
-#       - key: environment
-#         operator: Equal
-#         value: infra
-#         effect: NoSchedule
-# prometheusOperator:
-#   tolerations:
-#     - key: environment
-#       operator: Equal
-#       value: infra
-#       effect: NoSchedule
-#   admissionWebhooks:
-#     patch:
-#       tolerations:
-#         - key: environment
-#           operator: Equal
-#           value: infra
-#           effect: NoSchedule
-# thanosRuler:
-#   thanosRulerSpec:
-#     tolerations:
-#       - key: environment
-#         operator: Equal
-#         value: infra
-#         effect: NoSchedule
-# grafana:
-#   enabled: false
