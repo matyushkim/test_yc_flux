@@ -50,6 +50,11 @@ dashboards:
       gnetId: 1860
       revision: 33
       datasource: Prometheus
+    postges:
+      gnetId: 9628
+      revision: 7
+      datasource: Prometheus
+
 
 sidecar:
   dashboards:
