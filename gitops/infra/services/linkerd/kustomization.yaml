@@ -4,11 +4,11 @@ namespace: linkerd
 resources:
   - repository.yaml
   - release.yaml
-  - issuer.yaml
-  - certificate.yaml
-  - bundle.yaml
-  - secret-bundle.yaml
-  - secret.yaml
+  # - issuer.yaml
+  # - certificate.yaml
+  # - bundle.yaml
+  # - secret-bundle.yaml
+  # - secret.yaml
 configMapGenerator:
   - name: linkerd-control-plane-values
     files:
