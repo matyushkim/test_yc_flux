@@ -5,7 +5,7 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - monitor.yaml
+  # - monitor.yaml
 configMapGenerator:
   - name: cloudnative-pg-values 
     files:
