@@ -7,6 +7,7 @@ resources:
   - issuer.yaml
   - cert.yaml
   - secret.yaml
+  - configmap.yaml
 configMapGenerator:
   - name: linkerd-control-plane-values
     files:
