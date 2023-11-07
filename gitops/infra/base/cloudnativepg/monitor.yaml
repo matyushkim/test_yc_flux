@@ -5,7 +5,7 @@ metadata:
     Release:  prometheus
     app.kubernetes.io/name: cloudnative-pg
   name: controller-manager-metrics-monitor
-  namespace: system
+  namespace: postgres
 spec:
   selector:
     matchLabels:
