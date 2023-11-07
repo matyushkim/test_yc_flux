@@ -6,4 +6,4 @@ spec:
   schedule: "0 */5 * * * *"
   backupOwnerReference: self
   cluster:
-    name: pg-backup
+    name: postgres
