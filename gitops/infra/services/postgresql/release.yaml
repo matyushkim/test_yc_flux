@@ -15,7 +15,7 @@ spec:
       secret:
         name: grafana-pg-user
   monitoring:
-    enablePodMonitor: false
+    enablePodMonitor: true
   backup:
     retentionPolicy: 840m
     barmanObjectStore:
