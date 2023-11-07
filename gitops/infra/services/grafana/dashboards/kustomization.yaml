@@ -7,3 +7,21 @@ configMapGenerator:
   - name: grafana-dashboard
     files:
       - grafana-dashboard.json
+
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# commonLabels:
+#  grafana_dashboard: "1"
+
+# configMapGenerator:
+# - name: grafana-dashboard-image-list
+#   # specify name of locally downloaded json
+#   files:
+#   - Images.json
+# - name: grafana-dashboard-logs-back-front-idp
+#   files:
+#   - logs-back-front-idp.json
+
+generatorOptions:
+  disableNameSuffixHash: true
