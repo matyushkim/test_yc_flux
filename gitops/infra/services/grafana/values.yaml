@@ -44,7 +44,7 @@ datasources:
         jsonData:
           maxLines: 1000
       - name: postgres
-        type: prometheus
+        type: postgres
         access: proxy
         url: http://prometheus-kube-prometheus-prometheus.prometheus:9090
         jsonData:
