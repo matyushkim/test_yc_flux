@@ -50,9 +50,9 @@ dashboards:
       gnetId: 1860
       revision: 32
       datasource: Prometheus
-    cloudnativepg:
+    local-dashboard: 
       url: https://github.com/cloudnative-pg/cloudnative-pg/blob/main/docs/src/samples/monitoring/grafana-dashboard.json
-      
+
 dashboardProviders:
   dashboardproviders.yaml:
     apiVersion: 1
