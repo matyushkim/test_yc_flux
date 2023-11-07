@@ -8,6 +8,6 @@ resources:
   - ./prometheus
   # - ./victoria-metrics
   # - ./mimir
-  - ./linkerd-viz
+  # - ./linkerd-viz
   - ./postgresql
   - ./linkerd
