@@ -24,10 +24,7 @@ prometheus:
     probeSelectorNilUsesHelmValues: false
     ruleSelectorNilUsesHelmValues: false
     scrapeConfigSelectorNilUsesHelmValues: false
-
-grafana:
-  enabled: false
-alertmanager:
+    
   ingress:
     enabled: true
     annotations: 
@@ -43,3 +40,6 @@ alertmanager:
     -   secretName: matyshkin-com-prometheus-tls
         hosts:
         - prometheus.infra.matyshkinm.evrone.app
+
+grafana:
+  enabled: false
