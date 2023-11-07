@@ -19,8 +19,11 @@ prometheus:
         #     signature_version2: true
             # access_key  : "YCAJE4TM_oVlS5edgGF9sSeHv"
             # secret_key  : "YCMnd81ev6QUkQcGkfiASD0piHl1NdNqbKRSlA1k" 
-    podMonitorNamespaceSelector: {}
-    podMonitorSelector: {}
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
+    probeSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    scrapeConfigSelectorNilUsesHelmValues: false
 
 grafana:
   enabled: false
