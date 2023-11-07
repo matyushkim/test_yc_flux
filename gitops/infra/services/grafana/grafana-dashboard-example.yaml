@@ -1,0 +1,10 @@
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaDashboard
+metadata:
+  name: cloudnative-pg
+  labels:
+    app: grafana
+spec:
+  customFolderName: ./
+  name: grafana-dashboard.json
+  url: https://github.com/cloudnative-pg/cloudnative-pg/blob/main/docs/src/samples/monitoring/grafana-dashboard.json
