@@ -4,6 +4,7 @@ namespace: linkerd-cp
 resources:
   - repository.yaml
   - release.yaml
+  - namespace.yaml
   # - issuer.yaml
   # - certificate.yaml
   # - bundle.yaml
