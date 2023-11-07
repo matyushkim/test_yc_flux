@@ -7,5 +7,3 @@ configMapGenerator:
   - name: grafana-dashboard
     files:
       - grafana-dashboard.json
-configurations:
-  - kustomizeconfig.yaml
