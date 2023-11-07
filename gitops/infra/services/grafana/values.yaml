@@ -43,6 +43,12 @@ datasources:
         url: http://prometheus-kube-prometheus-prometheus.prometheus:9090
         jsonData:
           maxLines: 1000
+      - name: postgres
+        type: prometheus
+        access: proxy
+        url: http://prometheus-kube-prometheus-prometheus.prometheus:9090
+        jsonData:
+          maxLines: 1000
 dashboards:
   default:
     node-stats:
