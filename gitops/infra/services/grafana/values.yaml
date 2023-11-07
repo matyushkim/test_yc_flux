@@ -53,7 +53,7 @@ dashboards:
 
 sidecar:
   dashboards:
-  enabled: true
+    enabled: true
 
 dashboardProviders:
   dashboardproviders.yaml:
