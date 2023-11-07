@@ -43,7 +43,3 @@ prometheus:
 
 grafana:
   enabled: false
-
-alertmanager:
-  ingress:
-    enabled: false
