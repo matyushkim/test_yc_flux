@@ -6,8 +6,6 @@ resources:
   - secret.yaml
   - repository.yaml
   - release.yaml
-  - grafana-dashboard-example.yaml
-  # - grafana-dashboard.json
 configMapGenerator:
   - name: grafana-values
     files:
