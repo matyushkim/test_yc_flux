@@ -1,0 +1,55 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres-recovery # Название кластера.
+spec:
+  instances: 1
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: yc-network-hdd
+    size: 1Gi
+  # superuserSecret:
+  #   name: superuser-secret
+  bootstrap:
+    recovery:
+      source: clusterBackup
+      database: grafana
+      owner: grafana
+      secret:
+        name: grafana-pg-user
+  externalClusters:
+    - name: clusterBackup
+      barmanObjectStore:
+        destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
+        endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
+        s3Credentials: # Данные для доступа к bucket’у.
+          accessKeyId:
+            name: recovery-object-store-secret
+            key: AWS_ACCESS_KEY_ID
+          secretAccessKey:
+            name: recovery-object-store-secret
+            key: AWS_SECRET_ACCESS_KEY
+        wal:
+          maxParallel: 8
+          
+    # initdb: # Развертывание нового кластера.
+      # database: grafana
+      # owner: grafana
+      # secret:
+      #   name: grafana-pg-user
+  monitoring:
+    enablePodMonitor: true
+  backup:
+    retentionPolicy: "1d"
+    barmanObjectStore:
+      destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
+      endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
+      s3Credentials: # Данные для доступа к bucket’у.
+        accessKeyId:
+          name: postgres-aws
+          key: AWS_ACCESS_KEY_ID
+        secretAccessKey:
+          name: postgres-aws
+          key: AWS_SECRET_ACCESS_KEY
+      wal:
+        compression: gzip # Включено сжатие WAL.
