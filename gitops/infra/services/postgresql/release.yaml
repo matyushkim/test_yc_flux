@@ -13,7 +13,7 @@ spec:
       database: grafana
       owner: grafana
       secret:
-        name: grafana-pg-user
+        name: postgres-user
   monitoring:
     enablePodMonitor: true
   backup:
