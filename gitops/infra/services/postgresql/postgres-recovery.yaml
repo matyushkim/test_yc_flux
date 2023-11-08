@@ -11,10 +11,10 @@ spec:
   bootstrap:
     recovery:
       source: postgres
-      # database: grafana
-      # owner: grafana
-      # secret:
-      #   name: grafana-pg-user
+      database: grafana
+      owner: grafana
+      secret:
+        name: grafana-pg-user
   externalClusters:
     - name: postgres
       barmanObjectStore:
