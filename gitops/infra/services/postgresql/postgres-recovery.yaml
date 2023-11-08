@@ -12,9 +12,9 @@ spec:
     recovery:
       source: postgres
       database: grafana
-      # owner: grafana
-      # secret:
-      #   name: grafana-pg-user
+      owner: grafana
+      secret:
+        name: grafana-pg-user
   externalClusters:
     - name: postgres
       barmanObjectStore:
@@ -31,17 +31,17 @@ spec:
           maxParallel: 8
   monitoring:
     enablePodMonitor: true
-  # backup:
-  #   retentionPolicy: "1d"
-  #   barmanObjectStore:
-  #     destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
-  #     endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
-  #     s3Credentials: # Данные для доступа к bucket’у.
-  #       accessKeyId:
-  #         name: postgres-aws
-  #         key: AWS_ACCESS_KEY_ID
-  #       secretAccessKey:
-  #         name: postgres-aws
-  #         key: AWS_SECRET_ACCESS_KEY
-  #     wal:
-  #       compression: gzip # Включено сжатие WAL.
+  backup:
+    retentionPolicy: "1d"
+    barmanObjectStore:
+      destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
+      endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
+      s3Credentials: # Данные для доступа к bucket’у.
+        accessKeyId:
+          name: postgres-aws
+          key: AWS_ACCESS_KEY_ID
+        secretAccessKey:
+          name: postgres-aws
+          key: AWS_SECRET_ACCESS_KEY
+      wal:
+        compression: gzip # Включено сжатие WAL.
