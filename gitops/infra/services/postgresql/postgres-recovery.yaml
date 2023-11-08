@@ -10,13 +10,13 @@ spec:
     size: 1Gi
   bootstrap:
     recovery:
-      source: clusterBackup
+      source: postgres
       # database: grafana
       # owner: grafana
       # secret:
       #   name: grafana-pg-user
   externalClusters:
-    - name: clusterBackup
+    - name: postgres
       barmanObjectStore:
         destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
         endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
