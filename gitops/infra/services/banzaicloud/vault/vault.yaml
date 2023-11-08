@@ -40,13 +40,14 @@ spec:
   config:
     storage:
       s3:
-        region: "ru-cenrtal1-a"
-        bucket: "evronelabs-vault-key-store"
+        region    : "ru-cenrtal1-a"
+        bucket    : "evronelabs-vault-key-store"
+        endpoint  : "storage.yandexcloud.net"
     listener:
       tcp:
-        address: "0.0.0.0:8200"
-        tls_cert_file: /vault/tls/server.crt
-        tls_key_file: /vault/tls/server.key
+        address       : "0.0.0.0:8200"
+        tls_cert_file : /vault/tls/server.crt
+        tls_key_file  : /vault/tls/server.key
     api_addr: https://vault.vault:8200
     telemetry:
       statsd_address: localhost:9125
@@ -57,12 +58,12 @@ spec:
       valueFrom:
         secretKeyRef:
           name: vault-aws
-          key: AWS_ACCESS_KEY_ID
+          key : AWS_ACCESS_KEY_ID
     - name: AWS_SECRET_ACCESS_KEY
       valueFrom:
         secretKeyRef:
           name: vault-aws
-          key: AWS_SECRET_ACCESS_KEY
+          key : AWS_SECRET_ACCESS_KEY
 
   # See: https://banzaicloud.com/docs/bank-vaults/cli-tool/#example-external-vault-configuration
   # The repository also contains a lot examples in the test/deploy and operator/deploy directories.
