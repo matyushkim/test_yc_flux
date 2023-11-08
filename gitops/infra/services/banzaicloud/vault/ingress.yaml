@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vault
+  namespace: vault
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: vault.berealfan.com
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/cors-allow-methods: 'PUT, GET, POST, DELETE, PATCH, OPTIONS'
+    # nginx.ingress.kubernetes.io/proxy-body-size: 2m
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    # Authentication
+    nginx.ingress.kubernetes.io/auth-url: "https://dev.berealfan.com/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://dev.berealfan.com/oauth2/start?rd=$scheme://$host$escaped_request_uri"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: vault.berealfan.com
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: vault
+            port:
+              name: api-port
+        pathType: Prefix
+  tls:
+  - hosts:
+    - vault.berealfan.com
+    secretName: berealfun-com-wildcard-tls

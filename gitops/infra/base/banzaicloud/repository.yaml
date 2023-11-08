@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: vault-operator
+spec:
+  type: oci
+  url: oci://ghcr.io/bank-vaults/helm-charts/
+  interval: 10m

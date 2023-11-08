@@ -7,3 +7,4 @@ resources:
    - ./linkerd-crd
    - ./cloudnativepg
    - ./trust-manager
+   - ./banzaicloud
