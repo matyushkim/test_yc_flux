@@ -14,7 +14,7 @@ spec:
       database: grafana
       owner: grafana
       secret:
-        name: grafana-pg-user
+        name: postgres-recovery 
   externalClusters:
     - name: clusterBackup
       barmanObjectStore:
