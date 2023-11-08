@@ -17,10 +17,10 @@ spec:
         destinationPath: "s3://evronelabs-postgresql-store"
         s3Credentials:
           storageAccount:
-            name: postgres-aws
+            name: recovery-object-store-secret
             key: AWS_ACCESS_KEY_ID
           storageKey:
-            name: postgres-aws
+            name: recovery-object-store-secret
             key: AWS_SECRET_ACCESS_KEY
         wal:
           maxParallel: 8
