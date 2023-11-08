@@ -8,11 +8,13 @@ spec:
   storage:
     storageClass: yc-network-hdd
     size: 1Gi
+  superuserSecret:
+    name: superuser-secret
   bootstrap:
     recovery:
       source: clusterBackup
   externalClusters:
-    # - name: clusterBackup
+    - name: clusterBackup
       barmanObjectStore:
         destinationPath: "s3://evronelabs-postgresql-store"
         s3Credentials:
