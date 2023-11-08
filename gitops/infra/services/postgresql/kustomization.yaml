@@ -4,7 +4,7 @@ namespace: postgres
 resources:
   - namespace.yaml
   # - release.yaml
-  # - secret.yaml
+  - secret.yaml
   - backup.yaml
   - postgres-recovery.yaml
   - secret-recovery.yaml
