@@ -4,11 +4,11 @@ metadata:
   labels:
     prometheus: example
     role: alert-rules
-  name: my_first_rule
+  name: myfirstrule
   namespace: default
 spec:
   groups:
-  - name: my_rule_group
+  - name: myrulegroup
     interval: 60s
     rules:
     - alert: Alert
