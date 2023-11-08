@@ -12,3 +12,4 @@ resources:
   - ./postgresql
   # - ./linkerd
   - ./linkerd2
+  - ./banzaicloud
