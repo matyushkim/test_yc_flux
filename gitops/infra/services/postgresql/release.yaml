@@ -17,7 +17,7 @@ spec:
   monitoring:
     enablePodMonitor: true
   backup:
-    retentionPolicy: "840m"
+    retentionPolicy: "1d"
     barmanObjectStore:
       destinationPath: "s3://evronelabs-postgresql-store" # Путь к каталогу.
       endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
