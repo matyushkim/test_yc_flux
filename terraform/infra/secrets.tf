@@ -73,5 +73,5 @@ resource "kubernetes_secret" "vault-aws" {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
   }
-  depends_on = [kubernetes_namespace.postgres]
+  depends_on = [kubernetes_namespace.vault]
 }
