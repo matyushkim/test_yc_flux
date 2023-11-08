@@ -8,7 +8,7 @@ data: |
       apiVersion: 1
       groups:
         - orgId: 1
-          name: '{{ .Chart.Name }}_my_rule_group'
+          name: 'my_rule_group'
           folder: my_first_folder
           interval: 60s
           rules:
