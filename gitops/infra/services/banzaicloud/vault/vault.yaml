@@ -40,8 +40,8 @@ spec:
   config:
     storage:
       s3:
-        region: "eu-west-2"
-        bucket: "brf-vault-storage"
+        region: "ru-cenrtal1-a"
+        bucket: "evronelabs-vault-key-store"
     listener:
       tcp:
         address: "0.0.0.0:8200"

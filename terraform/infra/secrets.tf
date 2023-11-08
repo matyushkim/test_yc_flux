@@ -57,3 +57,21 @@ resource "kubernetes_secret" "postgres-aws" {
   }
   depends_on = [kubernetes_namespace.postgres]
 }
+
+resource "kubernetes_namespace" "vault" {
+  metadata {
+    name = "vault"
+  }
+  depends_on = [module.kube]
+}
+resource "kubernetes_secret" "vault-aws" {
+  metadata {
+    name      = "vault-aws"
+    namespace = kubernetes_namespace.postgres.metadata[0].name
+  }
+  data = {
+    AWS_ACCESS_KEY_ID     = var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY = var.aws_secret_access_key
+  }
+  depends_on = [kubernetes_namespace.postgres]
+}
