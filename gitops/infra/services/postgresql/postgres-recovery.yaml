@@ -11,10 +11,10 @@ spec:
   bootstrap:
     recovery:
       source: clusterBackup
-      database: grafana
-      owner: grafana
-      secret:
-        name: grafana-pg-user
+      # database: grafana
+      # owner: grafana
+      # secret:
+      #   name: grafana-pg-user
   externalClusters:
     - name: clusterBackup
       barmanObjectStore:
