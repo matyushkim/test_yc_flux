@@ -67,7 +67,7 @@ resource "kubernetes_namespace" "vault" {
 resource "kubernetes_secret" "vault-aws" {
   metadata {
     name      = "vault-aws"
-    namespace = kubernetes_namespace.postgres.metadata[0].name
+    namespace = kubernetes_namespace.vault.metadata[0].name
   }
   data = {
     AWS_ACCESS_KEY_ID     = var.aws_access_key_id
