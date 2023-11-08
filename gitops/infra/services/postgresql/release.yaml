@@ -24,10 +24,10 @@ spec:
         endpointURL: "https://storage.yandexcloud.net" # Сервис S3.
         s3Credentials: # Данные для доступа к bucket’у.
           accessKeyId:
-            name: postgres-aws
+            name: recovery-object-store-secret
             key: AWS_ACCESS_KEY_ID
           secretAccessKey:
-            name: postgres-aws
+            name: recovery-object-store-secret
             key: AWS_SECRET_ACCESS_KEY
 
       # barmanObjectStore:
