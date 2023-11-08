@@ -13,7 +13,7 @@ spec:
       source: clusterBackup
       database: grafana
       owner: grafana
-      secret-recovery:
+      secret:
         name: grafana-pg-user
   externalClusters:
     - name: clusterBackup
