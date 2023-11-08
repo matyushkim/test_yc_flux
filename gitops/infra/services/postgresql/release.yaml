@@ -24,7 +24,7 @@ spec:
             key: AWS_SECRET_ACCESS_KEY
         wal:
           maxParallel: 8
-    initdb: # Развертывание нового кластера.
+    # initdb: # Развертывание нового кластера.
       # database: grafana
       # owner: grafana
       # secret:

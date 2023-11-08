@@ -100,7 +100,7 @@ variable "buckets" {
   default = [
     {
       name = "evronelabs-postgresql-store",
-      acl  = "private"
+      acl  = "public-read"
     },
     {
       name = "evronelabs-prometheus-store",
