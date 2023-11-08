@@ -17,13 +17,13 @@ spec:
     - name: clusterBackup
       barmanObjectStore:
         destinationPath: "s3://evronelabs-postgresql-store"
-        s3Credentials:
-          storageAccount:
-            name: recovery-object-store-secret
-            key: AWS_ACCESS_KEY_ID
-          storageKey:
-            name: recovery-object-store-secret
-            key: AWS_SECRET_ACCESS_KEY
+      s3Credentials: # Данные для доступа к bucket’у.
+        accessKeyId:
+          name: postgres-aws
+          key: AWS_ACCESS_KEY_ID
+        secretAccessKey:
+          name: postgres-aws
+          key: AWS_SECRET_ACCESS_KEY
         wal:
           maxParallel: 8
     # initdb: # Развертывание нового кластера.
