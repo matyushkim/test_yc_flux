@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: postgres
 resources:
   - namespace.yaml
-  - release.yaml
+  # - release.yaml
   - secret.yaml
   - backup.yaml
   - postgres-recovery.yaml

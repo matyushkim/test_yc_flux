@@ -9,8 +9,8 @@ spec:
     storageClass: yc-network-hdd
     size: 1Gi
   bootstrap:
-    recovery:
-      source: postgres
+    recovery: # восстановление
+      source: postgres # будет создан из резервной копии
       database: grafana
       owner: grafana
       secret:
