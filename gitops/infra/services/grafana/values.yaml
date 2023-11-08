@@ -50,6 +50,7 @@ dashboards:
       gnetId: 1860
       revision: 33
       datasource: Prometheus
+      
 sidecar:
   dashboards:
     enabled: true
