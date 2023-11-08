@@ -54,6 +54,8 @@ dashboards:
 sidecar:
   dashboards:
     enabled: true
+  alerts:
+    enabled: true
 
 dashboardProviders:
   dashboardproviders.yaml:
@@ -71,28 +73,3 @@ dashboardProviders:
 service:
   annotations:
     linkerd.io/inject: enabled
-
-alerting:
-  rules.yaml:
-      apiVersion: 1
-      groups:
-        - orgId: 1
-          name: '{{ .Chart.Name }}_my_rule_group'
-          folder: my_first_folder
-          interval: 60s
-          rules:
-            - uid: my_id_1
-              title: my_first_rule
-              condition: A
-              data:
-                - refId: A
-                  datasourceUid: '-100'
-                  model:
-                    conditions:
-                    - alert: Alert
-                      expr: sum(rate(nginx_ingress_controller_requests{status=~'5..'}[1m])) by (ingress,cluster) / sum(rate(nginx_ingress_controller_requests[1m]))by (ingress) * 100 > 5
-                      for: 1m
-              annotations:
-                description: "{{ $labels.ingress }} has an error rate of {{ $value }}%. Expected less than 5%."
-              labels:
-                severity: warning
