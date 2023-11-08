@@ -16,5 +16,6 @@ spec:
       for: 1m
       labels:
         severity: warning
+        notification: telegram
       annotations:
         description: "ingress"
