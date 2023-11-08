@@ -9,11 +9,26 @@ spec:
     storageClass: yc-network-hdd
     size: 1Gi
   bootstrap:
+    recovery:
+      source: clusterBackup
+  externalClusters:
+    - name: clusterBackup
+      barmanObjectStore:
+        destinationPath: "s3://evronelabs-postgresql-store"
+        azureCredentials:
+          storageAccount:
+            name: postgres-aws
+            key: AWS_ACCESS_KEY_ID
+          storageKey:
+            name: postgres-aws
+            key: AWS_SECRET_ACCESS_KEY
+        wal:
+          maxParallel: 8
     initdb: # Развертывание нового кластера.
-      database: grafana
-      owner: grafana
-      secret:
-        name: grafana-pg-user
+      # database: grafana
+      # owner: grafana
+      # secret:
+      #   name: grafana-pg-user
   monitoring:
     enablePodMonitor: true
   backup:
