@@ -17,7 +17,7 @@ spec:
     - name: clusterBackup
       barmanObjectStore:
         destinationPath: https://console.cloud.yandex.ru/folders/b1g5l2llrv845fe4eaqv/storage/buckets/evronelabs-postgresql-store
-      s3Credentials: # Данные для доступа к bucket’у.
+        s3Credentials: # Данные для доступа к bucket’у.
         accessKeyId:
           name: recovery-object-store-secret
           key: AWS_ACCESS_KEY_ID
