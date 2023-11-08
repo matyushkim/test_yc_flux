@@ -18,8 +18,3 @@ spec:
     remediation:
       retries: 5
   values:
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
