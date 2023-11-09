@@ -8,3 +8,4 @@ resources:
    - ./cloudnativepg
    - ./trust-manager
    - ./banzaicloud
+   - ./secrets-sync

@@ -1,21 +1,21 @@
 name: terraform install infra
 
-# on:
-#   workflow_dispatch:
-
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - 'terraform/infra/**/*.tf'
-            - 'terraform/infra/**/*.yaml'
-    pull_request:
-        branches:
-            - main
-        paths:
-            - 'terraform/infra/**/*.tf'
-            - 'terraform/infra/**/*.yaml'
+  workflow_dispatch:
+
+# on:
+#     push:
+#         branches:
+#             - main
+#         paths:
+#             - 'terraform/infra/**/*.tf'
+#             - 'terraform/infra/**/*.yaml'
+#     pull_request:
+#         branches:
+#             - main
+#         paths:
+#             - 'terraform/infra/**/*.tf'
+#             - 'terraform/infra/**/*.yaml'
         
 env:
     working-directory: terraform/infra
