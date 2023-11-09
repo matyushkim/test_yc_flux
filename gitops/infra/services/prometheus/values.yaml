@@ -55,7 +55,7 @@ alertmanager:
           api_url: "https://api.telegram.org"
           send_resolved: true
           parse_mode: HTML
-          message: 'Хьюстон, у нас проблемы'
+          message: '{{ template "telegram.default" . }}'
 
     route:
         group_by: ['ds_id'] # Алерты группируются по UUID кластера.
