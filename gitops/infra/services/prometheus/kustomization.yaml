@@ -9,7 +9,7 @@ resources:
   - release.yaml
   # - prometheusrule.yaml
   # - patch-tolerations.yaml
-  # - ./alerts
+  - ./alerts
 configMapGenerator:
   - name: prometheus-values
     files: [values.yaml=values.yaml]
