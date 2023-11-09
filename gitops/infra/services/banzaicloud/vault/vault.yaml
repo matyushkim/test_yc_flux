@@ -54,7 +54,7 @@ spec:
     ui: true
 
   vaultEnvsConfig:
-    - name: vault-aws
+    - name: AWS_ACCESS_KEY_ID
       valueFrom:
         secretKeyRef:
           name: vault-aws
