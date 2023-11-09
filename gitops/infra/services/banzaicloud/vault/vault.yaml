@@ -40,7 +40,7 @@ spec:
   config:
     storage:
       s3:
-        region    : "ru-cenrtal1-a"
+        region    : "ru-cenrtal1"
         bucket    : "evronelabs-vault-key-store"
         endpoint  : "storage.yandexcloud.net"
     listener:
