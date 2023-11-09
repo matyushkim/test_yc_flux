@@ -3,7 +3,7 @@ prometheus:
   #   name: aws-credentials
   prometheusSpec:
     thanos:
-      blockSize: 5h
+      blockSize: 1m
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         existingSecret:
