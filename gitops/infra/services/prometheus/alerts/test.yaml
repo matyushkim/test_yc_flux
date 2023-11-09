@@ -12,7 +12,7 @@ spec:
     interval: 60s
     rules:
     - alert: Alert
-      expr: count(coredns_dns_requests_total) > 1
+      expr: count(coredns_dns_requests_total) > 2
       for: 1m
       labels:
         severity: warning
