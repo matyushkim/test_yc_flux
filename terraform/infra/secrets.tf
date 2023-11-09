@@ -12,7 +12,7 @@ resource "kubernetes_namespace" "secret" {
 }
 
 resource "kubernetes_secret" "replicator" {
-  for_each = toset(["postgres", "loki", "grafana", "prometheus"])
+  for_each = toset(["postgres", "loki", "grafana", "prometheus", "vault"])
   metadata {
     name      = "${each.key}-aws"
     namespace = kubernetes_namespace.secret.metadata[0].name
