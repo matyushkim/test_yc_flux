@@ -50,8 +50,8 @@ alertmanager:
     receivers:
      - name: telegram-test
        telegram_configs:
-        - chat_id: "ID вашего чата без кавычек"
-          bot_token: "Ваш токен без кавычек"
+        - chat_id: -4054758218
+          bot_token: 6924031733:AAFHyuMMY7xEDLLcQ0CP0sF4T4kIj608oq4
           api_url: "https://api.telegram.org"
           send_resolved: true
           parse_mode: HTML
