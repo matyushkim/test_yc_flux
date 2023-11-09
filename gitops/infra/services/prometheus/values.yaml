@@ -46,6 +46,20 @@ grafana:
 
 
 alertmanager:
+  templateFiles:
+    template_1.tmpl: |-
+          {{ define "slack.text" }}
+          {{- $root := . -}}
+          {{ range .Alerts }}
+            *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
+            *Description:* {{ .Annotations.description }}
+            *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+            *Runbook:* <{{ .Annotations.runbook }}|:spiral_note_pad:>
+            *Details:*
+              {{ range .Labels.SortedPairs }} - *{{ .Name }}:* `{{ .Value }}`
+              {{ end }}
+          {{ end }}
+          {{ end }}
   config: 
     receivers:
      - name: telegram-test
@@ -55,7 +69,7 @@ alertmanager:
           api_url: "https://api.telegram.org"
           send_resolved: true
           parse_mode: HTML
-          message: '{{ template "telegram.default" . }}'
+          message: '{{ template "slack.text" . }}'
 
     route:
         group_by: ['ds_id'] # Алерты группируются по UUID кластера.
