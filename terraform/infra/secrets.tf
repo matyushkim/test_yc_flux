@@ -26,7 +26,6 @@ resource "kubernetes_secret" "replicator" {
   }
   depends_on = [kubernetes_namespace.secret]
 }
-
 # resource "kubernetes_secret" "loki-aws" {
 #   metadata {
 #     name      = "loki-aws"
