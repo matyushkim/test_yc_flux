@@ -43,3 +43,28 @@ prometheus:
 
 grafana:
   enabled: false
+
+
+alertmanager:
+  config: 
+    receivers:
+     - name: telegram-test
+       telegram_configs:
+        - chat_id: "ID вашего чата без кавычек"
+          bot_token: "Ваш токен без кавычек"
+          api_url: "https://api.telegram.org"
+          send_resolved: true
+          parse_mode: HTML
+          message: 'Хьюстон, у нас проблемы'
+
+    route:
+        group_by: ['ds_id'] # Алерты группируются по UUID кластера.
+        group_wait: 15s
+        group_interval: 30s
+        repeat_interval: 12h
+        receiver: telegram-test
+        routes:
+          - receiver: telegram-test
+            continue: true
+            matchers:
+            - notification="telegram"
