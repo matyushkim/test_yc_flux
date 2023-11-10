@@ -6,4 +6,4 @@ resources:
   - repository.yaml
   # Services
   - vault
-  # - webhook
+  - webhook
