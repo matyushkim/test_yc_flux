@@ -106,6 +106,9 @@ spec:
           }
     auth:
       - type: kubernetes
+        config:
+          kubernetes_host: https://kubernetes.default.svc
+          disable_iss_validation: true
         roles:
           # Allow every pod in the default namespace to use the secret kv store
           - name: default
