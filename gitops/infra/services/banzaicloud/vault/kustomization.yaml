@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/bank-vaults/vault-operator/deploy/rbac
+  - https://github.com/bank-vaults/vault-operator/tree/main/deploy/rbac
   - vault.yaml
   - ingress.yaml
-  - ff.yaml
+  # - ff.yaml
