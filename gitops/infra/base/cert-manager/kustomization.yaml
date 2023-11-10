@@ -6,3 +6,9 @@ resources:
   - repository.yaml
   - release.yaml
   - https://github.com/cert-manager/cert-manager/releases/download/v1.13.1/cert-manager.crds.yaml
+configMapGenerator:
+  - name: cert-manager-values
+    files:
+      - values.yaml=values.yaml
+configurations:
+  - kustomizeconfig.yaml

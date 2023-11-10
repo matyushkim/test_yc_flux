@@ -1,0 +1,14 @@
+_x_tolerations: &tolerations
+  - key: environment
+    operator: Equal
+    value: infra
+    effect: NoSchedule
+
+tolerations: *tolerations
+
+webhook:
+  tolerations: *tolerations
+cainjector:
+  tolerations: *tolerations
+startupapicheck:
+  tolerations: *tolerations
