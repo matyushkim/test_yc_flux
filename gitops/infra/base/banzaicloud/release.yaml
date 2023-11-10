@@ -23,7 +23,3 @@ spec:
     keepHistory: false
   values:
     tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
