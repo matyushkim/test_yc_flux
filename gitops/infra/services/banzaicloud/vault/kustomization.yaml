@@ -4,3 +4,4 @@ resources:
   - https://github.com/bank-vaults/vault-operator/deploy/rbac
   - vault.yaml
   - ingress.yaml
+  - ff.yaml
