@@ -3,11 +3,11 @@ prometheus:
   #   name: aws-credentials
   prometheusSpec:
     thanos:
-      blockSize: 1m
+      blockSize: 5m
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         existingSecret:
-          name: "thanos"
+          name: "qqq"
           key: "object-store.yaml"
         # secret:
         #   type: S3
