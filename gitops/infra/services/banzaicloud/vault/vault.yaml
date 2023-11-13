@@ -108,6 +108,12 @@ spec:
           path "fluxcd/*" {
             capabilities = ["create", "read", "update", "delete", "list"]
           }
+      - name:  mat
+        rules: | 
+          path "fluxcd/*" {
+            capabilities = ["create", "read", "update", "delete", "list"]
+      
+      
     auth:
       - type: kubernetes
         roles:
@@ -139,21 +145,15 @@ spec:
             policies:
               - allow_dev
             ttl: 1h
-          - name: matyushkinmv
-            bound_service_account_names: "*"
-            bound_service_account_namespaces: "*"
-            policies:
-              - allow_admin
-            ttl: 1h
-      - type: token
+      - type: userpass
         roles:
-          - name: matyushkinmv
-            bound_service_account_names: "*"
-            bound_service_account_namespaces: "*"
+          - name: mat-test
+            password:
+                - "123"
             policies:
-              - allow_admin
+                - allow_admin
             ttl: 1h
-
+      
 
     secrets:
       - path: secret
