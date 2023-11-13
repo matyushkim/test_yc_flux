@@ -151,7 +151,7 @@ spec:
             user: mat-test
             password: "123"
             policies:
-                - allow_admin
+                - mat
            
       
 
