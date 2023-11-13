@@ -9,6 +9,7 @@ metadata:
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    disable_iss_validation: true
 
 spec:
   ingressClassName: nginx
