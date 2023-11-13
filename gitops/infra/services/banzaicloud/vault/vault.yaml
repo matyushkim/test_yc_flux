@@ -4,7 +4,7 @@ metadata:
   name: vault
 spec:
   size: 1
-  image: hashicorp/vault:1.15
+  image: hashicorp/vault:1.11
 
   # Specify the ServiceAccount where the Vault Pod and the Bank-Vaults configurer/unsealer is running
   serviceAccount: vault
@@ -14,14 +14,15 @@ spec:
     - "*"
 
   vaultPodSpec: &podSpec
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
+    # tolerations:
+    #   - key: environment
+    #     operator: Equal
+    #     value: infra
+    #     effect: NoSchedule
 
   vaultConfigurerPodSpec: *podSpec
 
+  # Describe where you would like to store the Vault unseal keys and root token.
   # Describe where you would like to store the Vault unseal keys and root token.
   unsealConfig:
     options:
@@ -113,7 +114,6 @@ spec:
             bound_service_account_namespaces: "*"
             policies: ["allow_secrets", "allow_pki"]
             ttl: 1h
-            disable_iss_validation: true
 
 
           # Allow mutation of secrets using secrets-mutation annotation to use the secret kv store
