@@ -54,10 +54,29 @@ thanosRuler:
       - key: environment
         operator: Equal
         value: infra
-        effect: NoSchedule
+        effect: NoSchedule  
+prometheusOperator:
+  tolerations:
+    - key: environment
+      operator: Equal
+      value: infra
+      effect: NoSchedule
+  admissionWebhooks:
+    patch:
+      tolerations:
+        - key: environment
+          operator: Equal
+          value: infra
+          effect: NoSchedule
 
 
 alertmanager:
+  alertmanagerSpec:
+    tolerations:
+      - key: environment
+        operator: Equal
+        value: infra
+        effect: NoSchedule
   templateFiles:
     template_1.tmpl: |-
           {{ define "slack.text" }}
