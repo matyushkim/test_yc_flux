@@ -108,7 +108,7 @@ spec:
           path "fluxcd/*" {
             capabilities = ["create", "read", "update", "delete", "list"]
           }
-      - name:  mat
+      - name: mat
         rules: | 
           path "fluxcd/*" {
             capabilities = ["create", "read", "update", "delete", "list"]
@@ -149,11 +149,10 @@ spec:
         roles:
           - name: mat-test
             user: mat-test
-            password:
-                - "123"
+            password: "123"
             policies:
                 - allow_admin
-            ttl: 1h
+           
       
 
     secrets:
