@@ -147,11 +147,12 @@ spec:
             ttl: 1h
       - type: userpass
         roles:
-          - name: mat-test
+          - name: admin
             user: mat-test
             password: "123"
             policies:
                 - mat
+            ttl: 1h
            
       
 
