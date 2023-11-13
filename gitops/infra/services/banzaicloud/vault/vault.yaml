@@ -113,6 +113,8 @@ spec:
             bound_service_account_namespaces: "*"
             policies: ["allow_secrets", "allow_pki"]
             ttl: 1h
+            disable_iss_validation: true
+
 
           # Allow mutation of secrets using secrets-mutation annotation to use the secret kv store
           - name: secretsmutation
