@@ -3,7 +3,7 @@ kind: Vault
 metadata:
   name: vault
 spec:
-  podAnnotations:
+  annotations:
     linkerd.io/inject: enabled
   size: 1
   image: hashicorp/vault:1.15
