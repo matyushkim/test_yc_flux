@@ -1,11 +1,11 @@
 prometheus:
-  # podAnnotations:
-  # linkerd.io/inject: enabled
+  podAnnotations:
+  linkerd.io/inject: enabled
   # extraSecret:
   #   name: aws-credentials
   prometheusSpec:
     thanos:
-      blockSize: 1m
+      blockSize: 5h
       # image: quay.io/thanos/thanos:v0.28.1
       objectStorageConfig:
         existingSecret:
