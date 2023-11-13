@@ -148,6 +148,7 @@ spec:
       - type: userpass
         roles:
           - name: mat-test
+            user: mat-test
             password:
                 - "123"
             policies:
