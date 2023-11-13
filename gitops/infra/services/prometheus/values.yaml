@@ -1,6 +1,6 @@
 prometheus:
-  podAnnotations:
-  linkerd.io/inject: enabled
+  # podAnnotations:
+  # linkerd.io/inject: enabled
   # extraSecret:
   #   name: aws-credentials
   prometheusSpec:
@@ -11,11 +11,11 @@ prometheus:
         existingSecret:
           name: www
           key: object-store.yaml
-    tolerations:
-      - key: environment
-        operator: Equal
-        value: infra
-        effect: NoSchedule
+    # tolerations:
+    #   - key: environment
+    #     operator: Equal
+    #     value: infra
+    #     effect: NoSchedule
         # secret:
         #   type: S3
         #   config:
