@@ -9,6 +9,11 @@ prometheus:
         existingSecret:
           name: qqq
           key: object-store.yaml
+    tolerations:
+      - key: environment
+        operator: Equal
+        value: infra
+        effect: NoSchedule
         # secret:
         #   type: S3
         #   config:
