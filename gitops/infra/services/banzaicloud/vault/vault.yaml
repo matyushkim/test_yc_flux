@@ -108,10 +108,10 @@ spec:
           path "fluxcd/*" {
             capabilities = ["create", "read", "update", "delete", "list"]
           }
-      - name: mat
-        rules: | 
-          path "fluxcd/*" {
-            capabilities = ["create", "read", "update", "delete", "list"]
+      # - name: mat
+      #   rules: | 
+      #     path "fluxcd/*" {
+      #       capabilities = ["create", "read", "update", "delete", "list"]
       
       
     auth:
@@ -131,28 +131,28 @@ spec:
             policies:
               - allow_secrets
             ttl: 1h
-      # - type: userpass
-      #   roles:
-      #     - name: admins
-      #       bound_service_account_names: "*"
-      #       bound_service_account_namespaces: "*"
-      #       policies:
-      #         - allow_admin
-      #       ttl: 1h
-      #     - name: default
-      #       bound_service_account_names: "*"
-      #       bound_service_account_namespaces: "*"
-      #       policies:
-      #         - allow_dev
-      #       ttl: 1h
       - type: userpass
         roles:
-          - name: admin
-            user: mat-test
-            password: "123"
+          - name: admins
+            bound_service_account_names: "*"
+            bound_service_account_namespaces: "*"
             policies:
-                - mat
+              - allow_admin
             ttl: 1h
+          - name: default
+            bound_service_account_names: "*"
+            bound_service_account_namespaces: "*"
+            policies:
+              - allow_dev
+            ttl: 1h
+      # - type: userpass
+      #   roles:
+      #     - name: admin
+      #       user: mat-test
+      #       password: "123"
+      #       policies:
+      #           - mat
+      #       ttl: 1h
            
       
 
