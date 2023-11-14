@@ -6,7 +6,7 @@ spec:
   vaultAnnotations:
     linkerd.io/inject: enabled
   size: 1
-  image: hashicorp/vault:1.15
+  image: hashicorp/vault:latest
   # bankVaultsImage: banzaicloud/bank-vaults:latest
 
   # Specify the ServiceAccount where the Vault Pod and the Bank-Vaults configurer/unsealer is running
