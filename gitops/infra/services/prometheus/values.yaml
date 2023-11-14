@@ -1,6 +1,6 @@
 prometheus:
-  # podAnnotations:
-  # linkerd.io/inject: enabled
+  podAnnotations:
+  linkerd.io/inject: enabled
   # extraSecret:
   #   name: aws-credentials
   prometheusSpec:

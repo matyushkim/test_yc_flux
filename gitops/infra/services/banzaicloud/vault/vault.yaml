@@ -3,8 +3,8 @@ kind: Vault
 metadata:
   name: vault
 spec:
-  # vaultAnnotations:
-  #   linkerd.io/inject: enabled
+  vaultAnnotations:
+    linkerd.io/inject: enabled
   size: 1
   image: hashicorp/vault:1.15
   # bankVaultsImage: banzaicloud/bank-vaults:latest
