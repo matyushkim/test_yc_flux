@@ -97,12 +97,12 @@ alertmanager:
     receivers:
      - name: telegram-test
        telegram_configs:
-        - chat_id: -4054758218
-          bot_token: 6924031733:AAFHyuMMY7xEDLLcQ0CP0sF4T4kIj608oq4
-          api_url: "https://api.telegram.org"
-          send_resolved: true
-          parse_mode: HTML
-          message: '{{ template "slack.text" . }}'
+        # - chat_id: -4054758218
+        #   bot_token: 6924031733:AAFHyuMMY7xEDLLcQ0CP0sF4T4kIj608oq4
+        #   api_url: "https://api.telegram.org"
+        #   send_resolved: true
+        #   parse_mode: HTML
+        #   message: '{{ template "slack.text" . }}'
 
         - chat_id: -417723463
           bot_token: 6801159788:AAE20ZjWrjnxV7A0ztGWLfWaADTUGQywMs0
