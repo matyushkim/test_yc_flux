@@ -32,21 +32,21 @@ prometheus:
     ruleSelectorNilUsesHelmValues: false
     scrapeConfigSelectorNilUsesHelmValues: false
 
-  # ingress:
-  #   enabled: true
-  #   annotations: 
-  #     cert-manager.io/cluster-issuer: letsencrypt-prod
-  #     kubernetes.io/ingress.class: nginx
-  #     kubernetes.io/tls-acme: "true"
-  #   paths: 
-  #     - /
-  #   pathType: Prefix
-  #   hosts:
-  #       - prometheus.infra.matyshkinm.evrone.app
-  #   tls: 
-  #   -   secretName: matyshkin-com-prometheus-tls
-  #       hosts:
-  #       - prometheus.infra.matyshkinm.evrone.app
+  ingress:
+    enabled: true
+    annotations: 
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+    paths: 
+      - /
+    pathType: Prefix
+    hosts:
+        - prometheus.infra.matyshkinm.evrone.app
+    tls: 
+    -   secretName: matyshkin-com-prometheus-tls
+        hosts:
+        - prometheus.infra.matyshkinm.evrone.app
 
 grafana:
   enabled: false
