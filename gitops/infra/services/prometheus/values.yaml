@@ -104,7 +104,7 @@ alertmanager:
           parse_mode: HTML
           message: '{{ template "slack.text" . }}'
 
-        - chat_id: -prometheus_my_evrone_bot
+        - chat_id: -417723463
           bot_token: 6801159788:AAE20ZjWrjnxV7A0ztGWLfWaADTUGQywMs0
           api_url: "https://api.telegram.org"
           send_resolved: true
