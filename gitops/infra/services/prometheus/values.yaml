@@ -84,9 +84,9 @@ alertmanager:
           {{ define "slack.text" }}
           {{- $root := . -}}
           {{ range .Alerts }}
-            **Alert:** - {{ .Annotations.summary }} - `{{ .Labels.severity }}`
-            **Alert started at:** - {{ .StartsAt.time.Time }}
-            **Description:** - {{ .Annotations.description }}
+            **Alert:** {{ .Annotations.summary }} - `{{ .Labels.severity }}`
+            **Alert started at:** {{ .StartsAt.time.Time }}
+            **Description:** {{ .Annotations.description }}
             **Details:**
               {{ range .Labels.SortedPairs }} - *{{ .Name }}:* `{{ .Value }}`
               {{ end }}
