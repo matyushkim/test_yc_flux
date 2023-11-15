@@ -85,7 +85,7 @@ alertmanager:
           {{- $root := . -}}
           {{ range .Alerts }}
             *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
-            *Alert started at:* {{ .StartsAt | humanizeTimestamp }}
+      
             *Description:* {{ .Annotations.description }}
             *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
             *Runbook:* <{{ .Annotations.runbook }}|:spiral_note_pad:>
@@ -94,7 +94,10 @@ alertmanager:
               {{ end }}
           {{ end }}
           {{ end }}
+
   config: 
+            # *Alert started at:* {{ .StartsAt | humanizeTimestamp }}
+
     receivers:
      - name: telegram-test
        telegram_configs:
