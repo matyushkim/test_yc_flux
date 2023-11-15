@@ -95,7 +95,6 @@ alertmanager:
 
   config: 
               # **Graph:** ```markdown[📈]({{ .GeneratorURL }})```
-
     receivers:
      - name: telegram-test
        telegram_configs:
