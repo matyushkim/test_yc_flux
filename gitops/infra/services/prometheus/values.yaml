@@ -87,7 +87,6 @@ alertmanager:
             **Alert:** - {{ .Annotations.summary }} - `{{ .Labels.severity }}`
             **Alert started at:** - {{ .StartsAt.time.Time }}
             **Description:** - {{ .Annotations.description }}
-            **Graph:** ```markdown[📈]({{ .GeneratorURL }})```
             **Details:**
               {{ range .Labels.SortedPairs }} - *{{ .Name }}:* `{{ .Value }}`
               {{ end }}
@@ -95,6 +94,8 @@ alertmanager:
           {{ end }}
 
   config: 
+              # **Graph:** ```markdown[📈]({{ .GeneratorURL }})```
+
     receivers:
      - name: telegram-test
        telegram_configs:
