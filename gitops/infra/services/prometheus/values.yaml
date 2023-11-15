@@ -95,8 +95,6 @@ alertmanager:
           {{ end }}
 
   config: 
-            #  *Alert started at:* {{ .StartsAt | humanizeTimestamp }}   <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
-
     receivers:
      - name: telegram-test
        telegram_configs:
