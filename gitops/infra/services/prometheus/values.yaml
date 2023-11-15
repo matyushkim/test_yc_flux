@@ -85,7 +85,7 @@ alertmanager:
           {{- $root := . -}}
           {{ range .Alerts }}
             **Alert:** - {{ .Annotations.summary }} - `{{ .Labels.severity }}`
-            **Alert started at:** - {{ .StartsAt.time.Time | humanize }}
+            **Alert started at:** - {{ .StartsAt.time.Time }}
             **Description:** - {{ .Annotations.description }}
             **Graph:** ```markdown[📈]({{ .GeneratorURL }})```
             **Details:**
